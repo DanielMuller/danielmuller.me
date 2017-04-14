@@ -1,0 +1,79 @@
+languageCode = "en"
+title = "Daniel Muller"
+baseURL = "https://danielmuller.me/"
+theme = "origin"
+PygmentsCodeFences = true
+pygmentsuseclasses = true
+
+[params]
+    description = "An Ang Mo Geek in Singapore"
+    locale = "en_US"
+    logo = "/logos/favicon-120x120.png"
+    ampElements = ["amp-analytics", "amp-iframe"]
+    themeColor = "#ffffff"
+    googleanalytics = "UA-1341906-8"
+    defaultSchema = "article"
+    iframedomain = "iframe.danielmuller.me"
+    disqusShortname = "danielmuller"
+
+[permalinks]
+    post = '/:year/:month/:slug/'
+[outputs]
+    home = [ "HTML", "RSS"]
+    page = [ "HTML"]
+[sitemap]
+  changefreq = "monthly"
+  priority = 0.5
+  filename = "sitemap.xml"
+[author]
+    name = "Daniel Muller"
+    bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>Now working in a Singaporean Start-up [Spuul](https://spuul.com/), breathing Ruby, Bash and AWS as SysAdmin with the same multipurpose Swiss-Army knife style.</p>"
+    shortbio = ""
+    location = "Singapore"
+    website = "https://daniel.ctrlaltdel.ch"
+    twitter = "DanielMullerCH"
+    github = "DanielMuller"
+    linkedin = "danielmullerch"
+    flipboard = "danielmuller"
+
+[params.share]
+    twitter = true
+    gplus = true
+    pinterest = true
+    facebook = true
+
+[params.favicon]
+    manifest = "manifest.json"
+    basename = "/logos/favicon"
+    ms_tilecolor = "#FFFFFF"
+    icon = [16, 32, 96, 192]
+    apple_touch = [57, 60, 72, 76, 114, 120, 144, 152, 180]
+    ms = [144]
+    ms_config = "browserconfig.xml"
+
+[[menu.links]]
+    pre = "My Stuff"
+    name = 'Follow me'
+    weight = 210
+    url = 'https://daniel.ctrlaltdel.ch/'
+[[menu.links]]
+    name = 'My photo gallery'
+    weight = 220
+    url = 'https://daniel.mesphotos.ch/'
+[[menu.links]]
+    name = 'My personal blog'
+    weight = 230
+    url = 'https://farfromhome.asia/'
+[[menu.links]]
+    pre = "Other's Blogs"
+    name = 'Srihari Yachamaneni'
+    weight = 310
+    url = 'https://srihary.com/'
+[[menu.links]]
+    name = 'Marc Bourgeois'
+    weight = 320
+    url = 'http://crearc.ch'
+[[menu.links]]
+    name = 'Michael Smith'
+    weight = 330
+    url = 'http://nokpis.com/'

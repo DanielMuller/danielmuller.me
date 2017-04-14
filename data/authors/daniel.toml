@@ -1,0 +1,12 @@
+GivenName = "Daniel"
+FamilyName = "Muller"
+DisplayName = "Daniel Muller"
+Thumbnail = ""
+Image = ""
+ShortBio = "It's me"
+LongBio = "It's really me"
+[social]
+    facebook    = "DanielMullerCH"
+    github      = "DanielMuller"
+    twitter     = "DanielMullerCH"
+    googleplus  = "DanielMullerToo"

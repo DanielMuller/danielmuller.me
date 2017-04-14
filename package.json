@@ -1,0 +1,50 @@
+{
+  "name": "danielmuller.me",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "hugo:server": "hugo server --buildDrafts --buildFuture",
+    "build:prod": "rm -rf /tmp/hugo_cache/ && rm -rf ./public && npm run images && hugo --ignoreCache && npm run optimize:html && bash bin/alias/build && npm run amphtml:validate",
+    "images": "gulp images",
+    "deploy": "npm run build:prod && npm run s3_sync",
+    "s3_sync": "npm run s3_sync_html && npm run s3_sync_images && npm run s3_sync_webp && npm run s3_sync_sitemap && npm run s3_sync_alias",
+    "s3_sync_html": "aws --region us-west-2 --profile danielmuller s3 sync --delete --exclude '*' --include '*.html' --include '*.xml' --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/",
+    "s3_sync_images": "aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*.webp' --exclude '*.html' --exclude '*.xml' --exclude '.gitkeep' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/",
+    "s3_sync_webp": "aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/",
+    "s3_sync_sitemap": "aws s3 cp --profile danielmuller --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml",
+    "s3_sync_alias": "bash bin/alias/push",
+    "cf_invalidate": "aws --profile danielmuller cloudfront create-invalidation --distribution-id E15XC7I4SGL3JX --paths '/*'",
+    "optimize:html": "./node_modules/.bin/html-minifier --input-dir ./public/ --output-dir ./public/ --file-ext html -c ./bin/html-minifier-config.json",
+    "google_ping": "curl 'http://www.google.com/webmasters/sitemaps/ping?sitemap=https%3A%2F%2Fdanielmuller.me%2Fsitemap.xml'",
+    "amphtml:validate": "gulp amphtml:validate"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DanielMuller/danielmuller.me.git"
+  },
+  "keywords": [
+    "website",
+    "blog"
+  ],
+  "author": "Daniel Muller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DanielMuller/danielmuller.me/issues"
+  },
+  "homepage": "https://github.com/DanielMuller/danielmuller.me#readme",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-amphtml-validator": "^1.0.1",
+    "gulp-changed": "^2.0.0",
+    "gulp-clean": "^0.3.2",
+    "gulp-filter": "^5.0.0",
+    "gulp-imagemin": "^3.1.1",
+    "gulp-load-plugins": "^1.5.0",
+    "gulp-responsive": "^2.7.0",
+    "html-minifier": "^3.4.1",
+    "imagemin": "^5.2.2",
+    "imagemin-jpeg-recompress": "^5.1.0",
+    "imagemin-pngquant-gfw": "^0.2.0"
+  }
+}
