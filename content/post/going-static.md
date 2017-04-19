@@ -2,12 +2,12 @@
 author = "Daniel"
 categories = ["Static"]
 date = "2017-04-19T23:24:20+08:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 draft = false
 tags = ["Wordpress", "Hugo"]
 title = "Going Static"
 [amp]
   elements = ["amp-image-lightbox","amp-social-share"]
-lastmod = "2017-04-19"
 +++
 
 I hosted my blog with [Wordpress](https://wordpress.org) on my own VPS. The amount of attacks and successful hacks on this blogs is enormous. Wordpress just suffers from notoriety and therefore becomes an easy target.
