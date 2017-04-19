@@ -2,6 +2,7 @@
 title = "Ubuntu, Flash and DRM hell"
 author = "Daniel"
 date = "2013-05-07T15:01:41+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Ubuntu",
   "Video"

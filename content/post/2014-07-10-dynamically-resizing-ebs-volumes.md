@@ -2,6 +2,7 @@
 title = "Dynamically resizing EBS volumes"
 author = "Daniel"
 date = "2014-07-10T10:51:57+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Server",
   "Ubuntu"

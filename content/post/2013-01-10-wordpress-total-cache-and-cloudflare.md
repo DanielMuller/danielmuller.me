@@ -2,6 +2,7 @@
 title = "WordPress, Total Cache and Cloudflare"
 author = "Daniel"
 date = "2013-01-09T16:30:30+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 image = "/images/2012/12/wp_truck.jpg"
 categories = [
   "Wordpress"

@@ -2,6 +2,7 @@
 title = "Photoswipe plugin for Koken"
 author = "Daniel"
 date = "2014-12-16T11:54:16+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 image = "/images/2014/11/koken-logo.png"
 categories = [
   "Koken",

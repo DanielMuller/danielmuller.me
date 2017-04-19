@@ -2,6 +2,7 @@
 title = "AWS, VPN and Public IP"
 author = "Daniel"
 date = "2014-09-19T11:21:49+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Internet",
   "Network",

@@ -2,6 +2,7 @@
 title = "The Corporate Disease"
 author = "Daniel"
 date = "2015-03-06T06:16:14+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = ["Thoughts"]
 tags = ["aws", "akamai", "tata", "cdn"]
 [amp]

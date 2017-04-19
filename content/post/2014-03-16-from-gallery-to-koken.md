@@ -2,6 +2,7 @@
 title = "From Gallery to Koken"
 author = "Daniel"
 date = "2014-03-15T16:48:21+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 image = "/images/2014/03/galleries.png"
 categories = [
   "Koken",

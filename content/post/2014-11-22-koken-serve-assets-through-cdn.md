@@ -2,6 +2,7 @@
 title = "Koken: Serve assets through CDN"
 author = "Daniel"
 date = "2014-11-22T08:05:53+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 slug = "koken-serve-assets-through-cdn"
 image = "/images/2014/11/koken-logo.png"
 categories = [

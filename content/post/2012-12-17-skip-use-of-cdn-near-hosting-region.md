@@ -2,6 +2,7 @@
 title = "Skip use of CDN near hosting region"
 author = "Daniel"
 date = "2012-12-17T15:44:57+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Routing"
 ]

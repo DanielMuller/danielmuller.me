@@ -2,6 +2,7 @@
 title = "Squeezebox on RaspberryPI"
 author = "Daniel"
 date = "2013-02-02T09:33:01+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 image = "/images/2013/02/raspberrypi.jpg"
 categories = [
   "Media"

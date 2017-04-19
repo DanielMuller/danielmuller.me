@@ -2,6 +2,7 @@
 title = "Android: Open an app from web link or fallback to market"
 author = "Daniel"
 date = "2013-02-19T15:53:36+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Android"
 ]

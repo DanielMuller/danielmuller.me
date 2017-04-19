@@ -2,6 +2,7 @@
 title = "Network Speed Testing"
 author = "Daniel"
 date = "2012-12-09T05:48:41+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Network"
 ]
@@ -13,7 +14,6 @@ tags = [
 ]
 [amp]
   elements = ["amp-social-share"]
-
 +++
 Everyone is aware of tools like [speedtest.net](http://speedtest.net) to get a sens of the Internet connectivity speed to certain regions. While it works on mostly every device it allows you to test speed to only one server at a time. And is primarily meant to test the speed of your ISP. I wanted to test connectivity to several part of the world in an _one click_ way, usable on multiple devices.
 

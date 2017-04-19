@@ -2,6 +2,7 @@
 title = "Boost your Koken speed with client-side caching"
 author = "Daniel"
 date = "2014-11-22T08:05:10+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 image = "/images/2014/11/koken-logo.png"
 categories = [
   "Koken",

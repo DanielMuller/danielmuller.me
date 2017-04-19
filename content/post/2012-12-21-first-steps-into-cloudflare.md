@@ -2,6 +2,7 @@
 title = "First steps into Cloudflare"
 author = "Daniel"
 date = "2012-12-21T15:48:28+00:00"
+lastmod = "2017-04-19T23:36:00+08:00"
 image = "/images/2012/12/cloudflare.png"
 categories = [
   "Internet",
