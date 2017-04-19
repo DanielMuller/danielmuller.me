@@ -1,0 +1,5 @@
+#!/bin/bash
+
+now=`date +%FT%T%:z`
+sed -i '/^lastmod =.*$/d' content/post/*.md
+sed -i '/^date =.*$/a lastmod = "'$now'"' content/post/*.md
