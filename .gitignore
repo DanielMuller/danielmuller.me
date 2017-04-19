@@ -1,3 +1,5 @@
 node_modules/
 public/
 static/images/
+bin/alias/empty
+bin/alias/push
