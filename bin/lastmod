@@ -1,5 +1,26 @@
 #!/bin/bash
 
+file='content/post/*.md'
+update_draft_date=false
+
+if [[ $1 ]]; then
+    file=$1
+    update_draft_date=true
+    if [[ ! -f $file ]]; then
+        echo "Error: No such file: "$file
+        exit 1
+    fi
+fi
+
 now=`date +%FT%T%:z`
-sed -i '/^lastmod =.*$/d' content/post/*.md
-sed -i '/^date =.*$/a lastmod = "'$now'"' content/post/*.md
+sed -i '/^lastmod =.*$/d' $file
+sed -i '/^date =.*$/a lastmod = "'$now'"' $file
+echo "lastmod updated to "$now" on "`basename $file`
+
+if [[ $update_draft_date ]]; then
+    draft=`grep -i "^draft\s*=\s*true$" $file`
+    if [[ $draft ]]; then
+        sed -i 's/^date =.*$/date = "'$now'"/' $file
+        echo "date updated to "$now" on "`basename $file`
+    fi
+fi
