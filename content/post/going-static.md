@@ -2,7 +2,7 @@
 author = "Daniel"
 categories = ["Static"]
 date = "2017-04-19T23:24:20+08:00"
-lastmod = "2017-04-19T23:36:00+08:00"
+lastmod = "2017-05-19T21:37:05+08:00"
 draft = false
 tags = ["Wordpress", "Hugo"]
 title = "Going Static"
@@ -90,4 +90,4 @@ And in some ways it is easy. With the help of a [Wordpress Plugin](https://githu
 
 If you need to change some of the points above, your migration will get more complex and more time consuming.
 
-Read more about the migration in "[From Wordpress to Hugo](/2017/04/from-wordpress-to-hugo/)"
+Read more about the migration in "[From Wordpress to Hugo]({{<relref "from-wordpress-to-hugo.md">}})"
