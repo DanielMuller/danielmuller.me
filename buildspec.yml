@@ -31,7 +31,7 @@ phases:
   post_build:
     commands:
       - aws --region us-west-2 s3 sync --delete --exclude '*' --include '*.html' --include '*.xml' --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
-      - aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*.webp' --exclude '*.html' --exclude '*.xml' --exclude '.gitkeep' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
-      - aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
-      - aws s3 cp --profile danielmuller --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml
+      - aws --region us-west-2 s3 sync --delete  --exclude '*.webp' --exclude '*.html' --exclude '*.xml' --exclude '.gitkeep' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
+      - aws --region us-west-2 s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
+      - aws --region us-west-2 s3 cp --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml
       - bash bin/alias/push danielmuller
