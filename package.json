@@ -13,7 +13,7 @@
     "s3_sync_images": "aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*.webp' --exclude '*.html' --exclude '*.xml' --exclude '.gitkeep' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/",
     "s3_sync_webp": "aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/",
     "s3_sync_sitemap": "aws s3 cp --profile danielmuller --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml",
-    "s3_sync_alias": "bash bin/alias/push",
+    "s3_sync_alias": "bash bin/alias/push danielmuller",
     "cf_invalidate": "aws --profile danielmuller cloudfront create-invalidation --distribution-id E15XC7I4SGL3JX --paths '/*'",
     "optimize:html": "./node_modules/.bin/html-minifier --input-dir ./public/ --output-dir ./public/ --file-ext html -c ./bin/html-minifier-config.json",
     "google_ping": "curl 'http://www.google.com/webmasters/sitemaps/ping?sitemap=https%3A%2F%2Fdanielmuller.me%2Fsitemap.xml'",

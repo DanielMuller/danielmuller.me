@@ -1,11 +1,15 @@
 #!/bin/bash
 rm -f bin/alias/push
 touch bin/alias/empty
+profile=""
+if [ "X$1" != "X" ]; then
+  profile="--profile $1"
+fi
 rgrep -Po '(?<=http-equiv=\"refresh\" content=\"0; url=https://danielmuller.me).*(?=\".*)' public/* | while read line; do
     srcfile=`echo $line | cut -d':' -f1`
     dstfile=`echo $line | cut -d':' -f2`
     rm -f $srcfile
     cleansrcfile=`echo $srcfile | sed -e 's/^public\///'`
-    echo "aws --region us-west-2 --profile danielmuller s3 cp --website-redirect $dstfile --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read bin/alias/empty s3://danielmuller.me/$cleansrcfile" >> bin/alias/push
+    echo "aws --region us-west-2 $profile s3 cp --website-redirect $dstfile --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read bin/alias/empty s3://danielmuller.me/$cleansrcfile" >> bin/alias/push
 done
 find public/ -type d -empty -delete
