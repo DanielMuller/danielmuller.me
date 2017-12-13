@@ -1,0 +1,37 @@
+version: 0.2
+
+environment_variables:
+  plaintext:
+    AWS_DEFAULT_REGION: "us-west-2"
+    HUGO_VERSION: "0.31.1"
+    HUGO_SHA256: "2ec6fd0493fa246a5747b0f1875d94affaaa30f11715f26abcbe1bc91c940716"
+    NODE_ENV: "development"
+
+phases:
+  install:
+    commands:
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - echo "${HUGO_SHA256}  /tmp/hugo.tar.gz" | sha256sum -c -
+      - tar xf /tmp/hugo.tar.gz -C /tmp
+      - mv /tmp/hugo /usr/bin/hugo
+      - rm -rf /tmp/hugo*
+      - curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
+      - apt-get install -y nodejs
+  build:
+    commands:
+      - git submodule update --init --recursive
+      - npm install
+      - rm -rf /tmp/hugo_cache/
+      - rm -rf ./public
+      - npm run images
+      - hugo --ignoreCache
+      - npm run optimize:html
+      - bash bin/alias/build
+      - npm run amphtml:validate
+  post_build:
+    commands:
+      - aws --region us-west-2 s3 sync --delete --exclude '*' --include '*.html' --include '*.xml' --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
+      - aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*.webp' --exclude '*.html' --exclude '*.xml' --exclude '.gitkeep' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
+      - aws --region us-west-2 --profile danielmuller s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
+      - aws s3 cp --profile danielmuller --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml
+      - bash bin/alias/push danielmuller
