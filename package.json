@@ -36,16 +36,16 @@
   "devDependencies": {
     "gulp": "^3.9.1",
     "gulp-amphtml-validator": "^1.0.1",
-    "gulp-changed": "^2.0.0",
+    "gulp-changed": "^3.1.1",
     "gulp-clean": "^0.3.2",
-    "gulp-filter": "^5.0.0",
-    "gulp-imagemin": "^3.1.1",
+    "gulp-filter": "^5.0.1",
+    "gulp-imagemin": "^4.0.0",
     "gulp-load-plugins": "^1.5.0",
-    "gulp-responsive": "^2.7.0",
-    "html-minifier": "^3.4.1",
-    "imagemin": "^5.2.2",
+    "gulp-responsive": "^2.8.0",
+    "html-minifier": "^3.5.7",
+    "imagemin": "^5.3.1",
     "imagemin-jpeg-recompress": "^5.1.0",
-    "imagemin-pngquant-gfw": "^0.2.0"
+    "imagemin-pngquant-gfw": "^0.2.0",
     "pngquant": "^1.3.0"
   }
 }
