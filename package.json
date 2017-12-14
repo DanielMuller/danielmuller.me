@@ -46,5 +46,6 @@
     "imagemin": "^5.2.2",
     "imagemin-jpeg-recompress": "^5.1.0",
     "imagemin-pngquant-gfw": "^0.2.0"
+    "pngquant": "^1.3.0"
   }
 }
