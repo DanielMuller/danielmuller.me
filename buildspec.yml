@@ -24,7 +24,7 @@ phases:
       - rm -rf /tmp/hugo_cache/
       - rm -rf ./public
       - npm run images
-      - hugo --ignoreCache
+      - HUGO_ENV=production hugo --ignoreCache
       - npm run optimize:html
       - bash bin/alias/build
       - npm run amphtml:validate

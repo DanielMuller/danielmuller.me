@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "hugo:server": "hugo server --buildDrafts --buildFuture",
-    "build:prod": "rm -rf /tmp/hugo_cache/ && rm -rf ./public && npm run images && hugo --ignoreCache && npm run optimize:html && bash bin/alias/build && npm run amphtml:validate",
+    "build:prod": "rm -rf /tmp/hugo_cache/ && rm -rf ./public && npm run images && HUGO_ENV=production hugo --ignoreCache && npm run optimize:html && bash bin/alias/build && npm run amphtml:validate",
     "images": "gulp images",
     "deploy": "npm run build:prod && npm run s3_sync",
     "s3_sync": "npm run s3_sync_html && npm run s3_sync_images && npm run s3_sync_webp && npm run s3_sync_sitemap && npm run s3_sync_alias",
