@@ -1,3 +1,49 @@
 ---
 hide_body: false
-fields: []
+fields:
+- type: text
+  name: title
+  label: Title
+- type: text
+  name: slug
+  label: Slug
+- type: text
+  label: Author
+  name: author
+- type: datetime
+  label: Date
+  name: date
+  config:
+    date_format: DD/MM/YYYY
+- type: datetime
+  default: Invalid date
+  label: Last Modification
+  name: lastmod
+  config:
+    date_format: DD/MM/YYYY
+- type: tag_list
+  name: categories
+  label: Categories
+- type: tag_list
+  label: Tags
+  name: tags
+- type: field_group
+  label: AMP
+  name: amp
+  fields:
+  - type: select
+    name: elements
+    config:
+      source:
+        type: simple
+      options:
+      - amp-social-share
+      - amp-image-lightbox
+      - amp-youtube
+    label: Elements
+- type: file
+  name: image
+  label: Image
+- type: boolean
+  name: draft
+  label: Draft
