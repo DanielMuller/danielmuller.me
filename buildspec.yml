@@ -35,3 +35,7 @@ phases:
       - aws --region us-west-2 s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
       - aws --region us-west-2 s3 cp --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml
       - bash bin/alias/push danielmuller
+cache:
+  paths:
+    - 'node_modules/**/*'
+    - 'static/images/**/*'
