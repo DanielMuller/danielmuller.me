@@ -11,7 +11,7 @@ tags = ["AWS", "MySQL", "RDS"]
 [blackfriday]
   fractions = false
 [amp]
-  elements = ["amp-social-share"]
+  elements = ["amp-social-share", "amp-gist"]
 +++
 One of our MySQL tables has started to grow out of control with more than 1 billion rows (that's 10<sup>9</sup>).
 
@@ -188,4 +188,4 @@ done;
 ```
 ## Next step: daily maintenance
 The above script should be run automatically at a defined interval. The backup part can be found in the following Gist. The missing part is exporting the ids to be deleted.
-{{< gist DanielMuller 2361f0a3a1a51e3561825b3b54399cb5 "mysql_to_athena.sh" >}}
+{{< amp-gist gistid="2361f0a3a1a51e3561825b3b54399cb5" height="520" >}}
