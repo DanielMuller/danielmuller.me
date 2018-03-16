@@ -38,7 +38,7 @@ Running on RDS, `SELECT INTO OUTFILE` is not an option.
 The easiest would be to run a single delete query, but with several millions of rows concerned and the lack of index on *created_at*, this would put the server on fire.
 ```sql
 delete from table where created_at<(NOW() - INTERVAL 1 MONTH) and status='obsolete';
-```didn't
+```
 
 ### Add index
 Adding an index on *created_at* and *status* is too time consuming and would lock the table for too long.
