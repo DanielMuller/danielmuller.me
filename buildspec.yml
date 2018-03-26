@@ -19,6 +19,7 @@ phases:
       - apt-get install -y nodejs
   build:
     commands:
+      - export PATH="~/node_modules/.bin:$PATH"
       - git submodule update --init --recursive
       - npm install
       - rm -rf /tmp/hugo_cache/
