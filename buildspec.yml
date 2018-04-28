@@ -15,6 +15,7 @@ phases:
       - tar xf /tmp/hugo.tar.gz -C /tmp
       - mv /tmp/hugo /usr/bin/hugo
       - rm -rf /tmp/hugo*
+      - for FILE in $(git ls-files); do TIME=$(git log --pretty=format:%cd -n 1 --date=iso -- "$FILE"); TIME=$(date -d "$TIME" +%Y%m%d%H%M.%S); echo "$TIME > $FILE"; touch -m -t "$TIME" "$FILE"; done
   pre_build:
     commands:
       - git submodule update --init --recursive
