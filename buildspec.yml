@@ -15,20 +15,16 @@ phases:
       - tar xf /tmp/hugo.tar.gz -C /tmp
       - mv /tmp/hugo /usr/bin/hugo
       - rm -rf /tmp/hugo*
-      - curl -sL https://deb.nodesource.com/setup_6.x | sudo bash -
-      - apt-get install -y nodejs
-  build:
+  pre_build:
     commands:
-      - export PATH="~/node_modules/.bin:$PATH"
       - git submodule update --init --recursive
       - npm install
       - rm -rf /tmp/hugo_cache/
       - rm -rf ./public
+  build:
+    commands:
       - npm run images
-      - HUGO_ENV=production hugo --ignoreCache
-      - npm run optimize:html
-      - bash bin/alias/build
-      - npm run amphtml:validate
+      - until (HUGO_ENV=production hugo --ignoreCache; npm run optimize:html; bash bin/alias/build; npm run amphtml:validate); do echo "apm failed. Retrying"; sleep 2; done
   post_build:
     commands:
       - aws --region us-west-2 s3 sync --delete --exclude '*' --include '*.html' --include '*.xml' --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
