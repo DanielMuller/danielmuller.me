@@ -4,6 +4,7 @@ title = "Cors at the Edge"
 date = 2018-11-15T08:06:48+08:00
 lastmod = 2018-11-15T08:06:48+08:00
 draft = false
+Excerpt = "With the raise of API driven apps, CORS is becoming an unavoidable subject. By adding a CDN, your CORS rules become a burden on caching."
 categories = [
   "Internet"
 ]
