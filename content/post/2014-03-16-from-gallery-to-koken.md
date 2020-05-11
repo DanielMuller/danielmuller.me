@@ -3,7 +3,7 @@ title = "From Gallery to Koken"
 author = "Daniel"
 date = "2014-03-15T16:48:21+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
-image = "/images/2014/03/galleries.png"
+image = "images/2014/03/galleries.png"
 categories = [
   "Koken",
   "Media",
@@ -13,8 +13,6 @@ tags = [
   "Gallery",
   "Photos"
 ]
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 +++
 Back in the 90's, there was no Ajax or HTML5. There was no Flickr, Picasaweb, or Instagram. The most common way to publish your photos on a website was to create a static html page for each album with all the thumbnails and images associated to it.
 
@@ -26,18 +24,15 @@ The layouts available by default for Gallery are lacking of "*Ajaxiness*" and "*
 
 But my Dad's Gallery 1 installation broke with the latest PHP upgrade. [Koken](http://koken.me/) was on my radar since a few month. Instead of upgrading to Gallery3, this was a good opportunity to try out Koken with real data. Self hosting this pictures is a requirement. I don't want to give them away to Google, Facebook, Yahoo! or other data eaters.
 
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-src="/images/2014/03/mesphotos-old.png"
+src="images/2014/03/mesphotos-old.png"
 title="Albums in Gallery1"
 caption="Pagination is present: no infinite scroll"
-lightbox="lightbox"
 >}}
 {{<amp-figure
-src="/images/2014/03/mesphotos-new.png"
+src="images/2014/03/mesphotos-new.png"
 title="Albums in Koken"
 caption="Theme: Axis"
-lightbox="lightbox"
 >}}
 
 ## My thoughts about Koken

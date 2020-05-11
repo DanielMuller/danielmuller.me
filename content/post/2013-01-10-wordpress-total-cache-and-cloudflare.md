@@ -3,7 +3,7 @@ title = "WordPress, Total Cache and Cloudflare"
 author = "Daniel"
 date = "2013-01-09T16:30:30+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
-image = "/images/2012/12/wp_truck.jpg"
+image = "images/2012/12/wp_truck.jpg"
 categories = [
   "Wordpress"
 ]
@@ -13,8 +13,6 @@ tags = [
   "Speed",
   "Wordpress"
 ]
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 +++
 Everybody is aware that WordPress is a heavy truck to display some "mostly" static content. Each _Plugin_ or _Widget_ that is added ads some stylesheet calls, javascript calls and database requests. This all together slows up the loading time of your blog. And it gets even worse when the site become popular and has to deal with thousands of requests. Why request for each visitor something from the database when the content only changes once in a while? Why go through all the PHP logic when the final rendered HTML is always the same?
 
@@ -38,10 +36,8 @@ Defined the right response headers on your pages, you can ask the visitors brows
 
 #### Avoid data traveling the world: proximity caching (CDN)
 
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-src="/images/2013/01/cdn-map.png"
-lightbox="lightbox"
+src="images/2013/01/cdn-map.png"
 >}}
 
 Caching your pages and images near to the user, will improve his page loading time. It will also allow to reduce your server load, since less requests will reach your server.

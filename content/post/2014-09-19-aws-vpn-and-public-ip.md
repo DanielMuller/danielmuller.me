@@ -16,8 +16,6 @@ tags = [
   "Internet",
   "VPN"
 ]
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 +++
 Once you start to integrate services with Telcos, ISPs or other major Network players who are not "Cloud Aware", you will need to go the VPN way using IPSec. Their setups have used all the available IP's defined by [RFC 1918](http://tools.ietf.org/html/rfc1918) (or just don't want to use them). They will want to use Public IP's behind your VPN.
 
@@ -25,11 +23,9 @@ The problem is that your EC2 instances are running behind a 1:1 NAT with only 
 
 Luckily the way to solve this problem is actually quite easy, we just need to add some iptables rules and a proxy.
 <!--more-->
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-  src="/images/2014/09/VPN.png"
+  src="images/2014/09/VPN.png"
   caption="Standard Site-to-Site VPN setup"
-  lightbox="lightbox"
 >}}
 
 ## Setup sample

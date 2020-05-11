@@ -1,14 +1,11 @@
 +++
-author = "daniel"
+author = "Daniel"
 categories = ["Static"]
 date = "2017-06-02T00:00:31+08:00"
 lastmod = "2017-06-01T23:58:56+08:00"
 tags = ["Wordpress", "PHP", "Joomla"]
 title = "converting dynamic sites to static hosting"
 draft = false
-
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 
 +++
 
@@ -53,36 +50,31 @@ Your site is now updated with the latest changes in `~/mirror/source.example.com
 If none of the above options are suitable, you can migrate your site to a static generator like [Hugo]({{< relref "going-static.md#going-hugo">}}), [Hexo](https://hexo.io/) or any other similar tool.
 
 ## Examples
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-  src="/images/2017/05/paomusic.png"
+  src="images/2017/05/paomusic.png"
   title="PAO"
   caption="Celtic Rock Band. No more active, but site looked good and most of the pictures are mine. Migrated from Joomla 1.5"
   attrlink="https://paomusic.com/"
   attr="paomusic.com"
-  lightbox="lightbox"
 >}}
 {{<amp-figure
-  src="/images/2017/05/bardesfossiles.png"
+  src="images/2017/05/bardesfossiles.png"
   title="Bar des Fossiles"
   caption="Alumni Bar at the annual physics department festival. Used to keep in touch and keep track of the drunk evenings, Facebook wasn't there yet. Migrated from Joomla 1.5"
   attrlink="https://bardesfossiles.ch/"
   attr="bardesfossiles.ch"
-  lightbox="lightbox"
 >}}
 {{<amp-figure
-  src="/images/2017/05/chapelle-echarlens.png"
+  src="images/2017/05/chapelle-echarlens.png"
   title="Chapelle Echarlens"
   caption="A beer my wife an I used to brew but never made the market jump. The site was more a joke, you need to keep busy between the brewing steps. Migrated from custom framework."
   attrlink="https://chapelle-echarlens.ch/"
   attr="chapelle-echarlens.ch"
-  lightbox="lightbox"
 >}}
 {{<amp-figure
-  src="/images/2017/05/geranium.png"
+  src="images/2017/05/geranium.png"
   title="Geranium"
   caption="It's a concept! Default landing page of the VPS that I was sharing with a friend. Intended as a joke about the hype of dynamic content, every content in boxes (but no descent CSS). Migrated from custom framwork."
   attrlink="https://geranium.crealbum.com/"
   attr="geranium.crealbum.com"
-  lightbox="lightbox"
 >}}

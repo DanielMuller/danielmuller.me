@@ -3,7 +3,7 @@ title = "OpenTTD: Timelapse from game save"
 author = "Daniel"
 date = "2014-07-30T01:27:55+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
-image = "/images/2014/07/Openttd.png"
+image = "images/2014/07/Openttd.png"
 categories = [
   "Ubuntu",
   "Video"
@@ -14,7 +14,7 @@ tags = [
   "timelapse"
 ]
 [amp]
-  elements = ["amp-youtube", "amp-social-share"]
+  elements = ["amp-youtube"]
 +++
 This script allows you to create a timelapse video from your [OpenTTD](http://www.openttd.org) game. It will use your previously saved games. No need to remember to take screenshots during the game, ad since you play it safe and save before and after each big civil engineering work (ooops ?), you will have enough frames to create a nice work to put into your Company heritage cabinet.
 

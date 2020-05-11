@@ -3,7 +3,7 @@ title = "Squeezebox on RaspberryPI"
 author = "Daniel"
 date = "2013-02-02T09:33:01+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
-image = "/images/2013/02/raspberrypi.jpg"
+image = "images/2013/02/raspberrypi.jpg"
 categories = [
   "Media"
 ]
@@ -11,8 +11,6 @@ tags = [
   "LAN",
   "Media"
 ]
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 +++
 I was looking to find a usage for my (RaspberryPI)[http://www.raspberrypi.org/]. Why not a headless Squeezebox-Client? To control the player, the Squeezebox app on your Android phone is the perfect choice.<!--more-->
 
@@ -49,10 +47,8 @@ SqueezePlay is the player part of the Squeeze family. I was looking to compile i
 
 The SqueezePlug image not only allows you to have a Squeeze-client, but allows you also to install a Squeeze-server. On the main configuration screen, you are able to configure Network, install samba end even upgrade the underlaying Debian distribution.
 
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeplug_config_main.png"
+src="images/2013/02/squeezeplug_config_main.png"
 >}}
 
 ## Server Installation
@@ -77,23 +73,19 @@ Installation is pretty straight forward. Choose "Install SqueezeLite" and follow
   4. SqueezeLite is started automatically
 
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeplug_config_client.png"
+src="images/2013/02/squeezeplug_config_client.png"
 caption="Choose SqueezeLite"
 >}}
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeplug_config_name.jpg"
+src="images/2013/02/squeezeplug_config_name.jpg"
 caption="Choose a name"
 >}}
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeplug_config_client_server.png"
+src="images/2013/02/squeezeplug_config_client_server.png"
 caption="Set your Server IP"
 >}}
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeplug_config_client_audio.png"
+src="images/2013/02/squeezeplug_config_client_audio.png"
 caption="Set your soundcard"
 >}}
 
@@ -106,18 +98,15 @@ Configuration file is located at `/etc/default/squeezelite`. Client can be stopp
 To control the player, the easiest way is to use the Squeezebox app available from [App Store](https://itunes.apple.com/us/app/logitech-squeezebox-controller/id431302899) or [Google Play](https://play.google.com/store/apps/details?id=com.logitech.squeezeboxremote).
 
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeremote_choose.png"
+src="images/2013/02/squeezeremote_choose.png"
 caption="Choose client to control"
 >}}
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeremote_menu.png"
+src="images/2013/02/squeezeremote_menu.png"
 caption="Main menu/images"
 >}}
 {{<amp-figure
-lightbox="lightbox"
-src="/images/2013/02/squeezeremote_sync.png"
+src="images/2013/02/squeezeremote_sync.png"
 caption="Sync SqueezeLite with Squeezebox Touch"
 >}}
 

@@ -6,8 +6,6 @@ lastmod = "2017-04-19T23:36:00+08:00"
 categories = [
   "Android"
 ]
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 +++
 For the Android app we developed at [Spuul](https://spuul.com/), we needed to redirect users to the app when they opened certain links on their device.
 
@@ -51,10 +49,8 @@ The idea is to still use the http scheme and have the app listen to another doma
   3. Configure web app to redirect subdomain when client is an Android device, adding wanted path depending on context
   4. If the app is installed:
     * The user needs to choose if he wants to continue with Browser or with the app (if he didn't already set the app as default)
-    {{<amp-image-lightbox id="lightbox">}}
     {{<amp-figure
-    src="/images/2013/02/android_app_chooser.png"
-    lightbox="lightbox"
+    src="images/2013/02/android_app_chooser.png"
     >}}
     * If he chooses _Browser_, the web server redirects the user to the market from where he can open the app
   5. If the app is not installed:

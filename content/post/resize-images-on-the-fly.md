@@ -1,4 +1,5 @@
 +++
+author = "Daniel"
 title = "Resize Images on the Fly"
 date = 2020-03-05T10:21:27+08:00
 lastmod = 2020-03-05T10:21:27+08:00
@@ -16,8 +17,6 @@ tags = [
   "Lambda",
   "Api Gateway"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 
 I guess you are familiar with services like [Cloudinary](https://cloudinary.com/) or [ImageKit.io](https://imagekit.io/). They are both excellent services with free tiers.

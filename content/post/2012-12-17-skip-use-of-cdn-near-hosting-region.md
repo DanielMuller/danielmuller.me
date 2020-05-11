@@ -12,8 +12,6 @@ tags = [
   "DNS",
   "Route53"
 ]
-[amp]
-  elements = ["amp-image-lightbox", "amp-social-share"]
 +++
 The server hosting this domain is a VPS hosted in Switzerland by [Nimag network SàRL](http://nimag.net/index.php/produits-8/vps). Access speed from Asia is pretty bad, specially due to network latency on the pipes Singapore-US and US-Europe. In using a [CDN](http://en.wikipedia.org/wiki/Content_delivery_network) to serve assets, we improve global page loading time in lowering the loading times of assets.
 
@@ -41,16 +39,13 @@ I assume you already have set up your CDN, either [Cloudfront](http://aws.amazon
   8. Choose an AWS Region for which you want routing through CDN
   9. Repeat step 6 to 8 to cover the world. No need to fill each region. Just the ones surrounding your non-CDN region. Visitors near Tokyo will get the response from us-west-1 or sa-southeast-1, so no need to create an entry for sa-northest-1
 
-{{<amp-image-lightbox id="lightbox" >}}
 {{<amp-figure
-src="/images/2012/12/route53_latency_record1.png"
+src="images/2012/12/route53_latency_record1.png"
 caption="Route53 Latency Record - Europe"
-lightbox="lightbox"
 >}}
 {{<amp-figure
-src="/images/2012/12/route53_latency_record2.png"
+src="images/2012/12/route53_latency_record2.png"
 caption="Route53 Latency Record - Asia"
-lightbox="lightbox"
 >}}
 
 ## Testing results

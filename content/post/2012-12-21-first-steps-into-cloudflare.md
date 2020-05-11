@@ -3,7 +3,7 @@ title = "First steps into Cloudflare"
 author = "Daniel"
 date = "2012-12-21T15:48:28+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
-image = "/images/2012/12/cloudflare.png"
+image = "images/2012/12/cloudflare.png"
 categories = [
   "Internet",
   "Routing"
@@ -14,8 +14,6 @@ tags = [
   "DNS",
   "Speed"
 ]
-[amp]
-  elements = ["amp-image-lightbox", "amp-social-share"]
 +++
 While writing about [Cloudfront](/2012/12/skip-use-of-cdn-near-hosting-region/), I came accross another CDN service called [Cloudflare](http://www.cloudflare.com). The free entry price made me suspicious, hosting and transport has a price. Since I had nothing to loose and that this domain was new, I decided to give it a try. So far, didn't find any dirty trick.
 
@@ -51,11 +49,9 @@ Once your account is created, Cloudflare will ask for your domain. The DNS for y
 
 The actual domain settings are scanned, and original configuration is proposed. You can then tweak and change all you want. It's an easy, intuitive and nice interface to manage your DNS entries. You define directly from the DNS interface, which hostnames should be served by Cloudflare.
 
-{{<amp-image-lightbox id="lightbox" >}}
 {{<amp-figure
 src="/images/2012/12/cf_dns_record.png"
 caption="A record crossing Cloudflare"
-lightbox="lightbox"
 >}}
 
 Once your hostnames are configured, you need to change your domain configuration to make it use Cloudflare's DNS servers. Let the DNS stuff spread the world (can be immediate, or take several days depending on TTL's). All the steps are well explained, no worries.

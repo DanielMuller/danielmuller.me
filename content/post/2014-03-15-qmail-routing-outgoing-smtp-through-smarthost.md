@@ -11,8 +11,6 @@ tags = [
   "SMTP",
   "Spam"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 If, like me, you are still using an old style LAMP stack combining Web and E-Mail, then you certainly made a "stay over" in SPAM-paradise.
 

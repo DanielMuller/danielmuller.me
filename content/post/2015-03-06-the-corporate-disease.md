@@ -5,8 +5,6 @@ date = "2015-03-06T06:16:14+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
 categories = ["Thoughts"]
 tags = ["aws", "akamai", "tata", "cdn"]
-[amp]
-  elements = ["amp-social-share"]
 +++
 The tech B2B world has changed in the last decade. It used to be sales talks to sales and agree on a product and price. Then give the job to the tech team.
 

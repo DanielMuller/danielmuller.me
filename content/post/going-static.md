@@ -6,8 +6,6 @@ lastmod = "2017-05-19T21:37:05+08:00"
 draft = false
 tags = ["Wordpress", "Hugo"]
 title = "Going Static"
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
 +++
 
 I hosted my blog with [Wordpress](https://wordpress.org) on my own VPS. The amount of attacks and successful hacks on this blogs is enormous. Wordpress just suffers from notoriety and therefore becomes an easy target.
@@ -54,19 +52,19 @@ The same improvements can be observed with some curl timings:
 
 ## Alternatives solutions
 
-* **Keeping Wordpress**  
+* **Keeping Wordpress**
     Wordpress makes a blogger's life easy. Throw in some plugins, a theme and off you go. Maintaining the code is a pain, and without the right caching plugins, it's very slow.
-* **Moving to [Hosted Wordpress](https://wordpress.com)**  
+* **Moving to [Hosted Wordpress](https://wordpress.com)**
     For 3USD a month, you get your own domain and no maintenance hassle. But you loose some of the personalization you have, even if [Jetpack](https://wordpress.org/plugins/jetpack/) is becoming more and more powerful.
-* **[Pagekit](https://pagekit.com/)**  
+* **[Pagekit](https://pagekit.com/)**
     [YooTheme](http://yootheme.com/), a [Joomla](https://joomla.org) and [Wordpress](https://wordpress.com) theme shop, started their own CMS, making it a Joomla-light or Wordpress-light. But it's based on PHP and will eventually suffer from the same obesity disease. Not counting you still need a server to run it.
-* **[Ghost](https://ghost.org)**  
+* **[Ghost](https://ghost.org)**
     Using [NodeJS](https://nodejs.org/) as backend, like Wordpress you can self-host the code or use their pricey hosted version at 20USD/month. But again, you need to run your own server. Their [Markdown](https://en.wikipedia.org/wiki/Markdown) editor with live preview is very appealing.
-* **[Hugo](https://gohugo.io/)**  
+* **[Hugo](https://gohugo.io/)**
     Written in [Go](https://golang.org/), Hugo uses Markdown content and generates your site as plain HTML pages. No need to install Go or other dependencies, Hugo provides a single binary with everything bundled inside.
-* **[Jekyll](https://jekyllrb.com/)**  
+* **[Jekyll](https://jekyllrb.com/)**
     I didn't dig into Jekyll, the [Ruby](http://www.ruby-lang.org/) blocked me.
-* **[Github](https://github.com)**  
+* **[Github](https://github.com)**
     With Github pages, you get a hosted Jekyll (with CDN) for free. But you won't be able to serve your content over HTTPS on your own domain, and you won't be able to use the CDN and your own APEX domain.
 
 ## Going Hugo

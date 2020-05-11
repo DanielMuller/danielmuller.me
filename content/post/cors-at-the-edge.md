@@ -14,8 +14,6 @@ tags = [
   "Cloudfront",
   "Lambda"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 
 With the raise of API driven apps, CORS is becoming an unavoidable subject.

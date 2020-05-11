@@ -12,8 +12,6 @@ tags = [
   "EBS",
   "EC2"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 [AWS](http://aws.amazon.com) provides multiples services that adjust sizes to your actual usage. This is not really the case when it comes to [EBS](http://aws.amazon.com/ebs/)EBS.
 

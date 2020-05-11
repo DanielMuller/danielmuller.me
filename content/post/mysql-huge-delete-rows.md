@@ -11,7 +11,7 @@ tags = ["AWS", "MySQL", "RDS"]
 [blackfriday]
   fractions = false
 [amp]
-  elements = ["amp-social-share", "amp-gist"]
+  elements = ["amp-gist"]
 +++
 One of our MySQL tables has started to grow out of control with more than 1 billion rows (that's 10<sup>9</sup>).
 

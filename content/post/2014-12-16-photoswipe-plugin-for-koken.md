@@ -3,7 +3,7 @@ title = "Photoswipe plugin for Koken"
 author = "Daniel"
 date = "2014-12-16T11:54:16+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
-image = "/images/2014/11/koken-logo.png"
+image = "images/2014/11/koken-logo.png"
 categories = [
   "Koken",
   "Photos"
@@ -13,8 +13,6 @@ tags = [
   "Mobile",
   "Photos"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 Yes, I know! Again an article about [Koken](http://koken.me)! This time it is about front-end, something I am really not familiar not at ease with, Thanks [Steve](https://github.com/steverandy) for your help and trying to convince me that async is not that evil. The default _Lightbox_ functionality from Koken has always annoyed me. Specially in a mobile world where swiping has become a defacto standard. Enters [Photoswipe](http://photoswipe.com/).<!--more-->
 

@@ -7,8 +7,6 @@ categories = [
   "Ubuntu",
   "Video"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 Yes, there are still peoples serving content through flash, and yes there are still peoples using DRM.
 

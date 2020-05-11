@@ -4,7 +4,7 @@ author = "Daniel"
 date = "2014-11-22T08:05:53+00:00"
 lastmod = "2017-04-19T23:36:00+08:00"
 slug = "koken-serve-assets-through-cdn"
-image = "/images/2014/11/koken-logo.png"
+image = "images/2014/11/koken-logo.png"
 categories = [
   "Koken",
   "Photos"
@@ -14,8 +14,6 @@ tags = [
   "Gallery",
   "Speed"
 ]
-[amp]
-elements = ["amp-social-share"]
 +++
 You can highly improve your site display speed by using a [CDN](http://en.wikipedia.org/wiki/Content_delivery_network). This is also true with [Koken](http://koken.me).
 

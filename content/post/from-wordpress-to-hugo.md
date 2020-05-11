@@ -7,9 +7,6 @@ tags = ["Wordpress", "Hugo", "AWS", "CDN", "Cloudfront"]
 title = "From Wordpress to Hugo"
 draft = false
 
-[amp]
-  elements = ["amp-image-lightbox","amp-social-share"]
-
 +++
 
 As mentioned in [Going Static]({{< relref "going-static.md" >}}), I migrated my [Wordpress](https://wordpress.org) blogs to a static site build with [Hugo](https://gohugo.io). Most articles on the subject convinced me that it would be easy. The truth is, it isn't that straight forward.
@@ -26,16 +23,13 @@ I wanted my blogs to me [AMP](https://www.ampproject.org) validated. I didn't fi
 
 * Using Hugo's theme [Casper](https://github.com/vjeantet/hugo-theme-casper) as a base, I modified it to create [Campser](https://github.com/DanielMuller/hugo-theme-campser). *casper* + *AMP* = c**AMP**ster. This theme is currently used on [Far from Home](https://farfromhome.asia).
 * Using this blog's wordpress theme [Origin](https://alienwp.com/themes/origin/) as a base, I created [Origin for Hugo](https://github.com/DanielMuller/hugo-theme-origin) from scratch. This theme is used on this blog.
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-  src="/images/2017/05/campser.jpg"
+  src="images/2017/05/campser.jpg"
   caption="Hugo Theme Campser"
-  lightbox="lightbox"
 >}}
 {{<amp-figure
-  src="/images/2017/05/origin.jpg"
+  src="images/2017/05/origin.jpg"
   caption="Hugo Theme Origin"
-  lightbox="lightbox"
 >}}
 
 ### Front Matter

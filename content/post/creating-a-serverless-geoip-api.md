@@ -4,7 +4,7 @@ title = "Creating a Serverless GeoIP API"
 date = 2018-05-02T22:22:17+08:00
 lastmod = 2018-05-02T22:22:17+08:00
 draft = false
-image = "/images/2018/05/geoip.png"
+image = "images/2018/05/geoip.png"
 categories = [
   "Internet",
   "Network",
@@ -16,8 +16,6 @@ tags = [
   "NoMoreServers",
   "Lambda"
 ]
-[amp]
-  elements = ["amp-image-lightbox", "amp-social-share"]
 +++
 Why build a GeoIP API when you can buy it directly from [Maxmind](https://www.maxmind.com/en/geoip2-precision-city-service) or use their [GeoIP Databases](https://www.maxmind.com/en/geoip2-city)?
 
@@ -28,12 +26,10 @@ It becomes easier to use an external HTTP-API. Hosting it yourself reduces the r
 ## Make it serverless
 To avoid maintenance and to not have to pay for idle time, you want to have it serverless. Storage is the one part that still costs something when idle, so we need something cheap. [Lambda](https://aws.amazon.com/lambda/), [S3](https://aws.amazon.com/s3/), [S3-Select](https://aws.amazon.com/blogs/aws/s3-glacier-select/) and [API Gateway](https://aws.amazon.com/api-gateway/) are the services used for this.
 
-{{<amp-image-lightbox id="lightbox">}}
 {{<amp-figure
-src="/images/2018/05/geoIP-schema.png"
+src="images/2018/05/geoIP-schema.png"
 title="GeoAPI-Serverless"
 caption="GeoAPI-Serverless: Lambda, S3-Select, API Gateway, Cloudfront"
-lightbox="lightbox"
 >}}
 
 ## Storing the data

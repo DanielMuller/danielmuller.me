@@ -12,8 +12,6 @@ tags = [
   "Javascript",
   "Speed"
 ]
-[amp]
-  elements = ["amp-social-share"]
 +++
 Everyone is aware of tools like [speedtest.net](http://speedtest.net) to get a sens of the Internet connectivity speed to certain regions. While it works on mostly every device it allows you to test speed to only one server at a time. And is primarily meant to test the speed of your ISP. I wanted to test connectivity to several part of the world in an _one click_ way, usable on multiple devices.
 
