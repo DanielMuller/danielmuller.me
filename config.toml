@@ -2,6 +2,7 @@ languageCode = "en"
 title = "Daniel Muller"
 baseURL = "https://danielmuller.me/"
 theme = "origin"
+timeout = 60000
 PygmentsCodeFences = true
 pygmentsuseclasses = true
 
@@ -9,7 +10,7 @@ pygmentsuseclasses = true
     description = "An Ang Mo Geek in Singapore"
     locale = "en_US"
     logo = "/logos/favicon-120x120.png"
-    ampElements = ["amp-analytics", "amp-iframe"]
+    ampElements = ["amp-analytics", "amp-iframe", "amp-twitter"]
     themeColor = "#ffffff"
     googleanalytics = "UA-1341906-8"
     defaultSchema = "article"
@@ -27,7 +28,7 @@ pygmentsuseclasses = true
   filename = "sitemap.xml"
 [author]
     name = "Daniel Muller"
-    bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>Now working in a Singaporean Start-up [Spuul](https://spuul.com/), breathing Ruby, Bash and AWS as SysAdmin with the same multipurpose Swiss-Army knife style.</p>"
+    bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>Now working in a Singaporean Start-up <a href=\"https://spuul.com/\" target=\"_blank\">Spuul</a>, breathing Ruby, Bash and AWS as SysAdmin with the same multipurpose Swiss-Army knife style.</p>"
     shortbio = ""
     location = "Singapore"
     website = "https://daniel.ctrlaltdel.ch"
@@ -64,16 +65,13 @@ pygmentsuseclasses = true
     name = 'My personal blog'
     weight = 230
     url = 'https://farfromhome.asia/'
-[[menu.links]]
-    pre = "Other's Blogs"
-    name = 'Srihari Yachamaneni'
-    weight = 310
-    url = 'https://srihary.com/'
-[[menu.links]]
-    name = 'Marc Bourgeois'
-    weight = 320
-    url = 'http://crearc.ch'
-[[menu.links]]
-    name = 'Michael Smith'
-    weight = 330
-    url = 'http://nokpis.com/'
+
+[imaging]
+  resampleFilter = "CatmullRom"
+  quality = 95
+  
+[imaging.exif]
+  includeFields = ""
+
+[markup.goldmark.renderer]
+  unsafe= true
