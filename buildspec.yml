@@ -19,7 +19,7 @@ phases:
   pre_build:
     commands:
       - git submodule update --init --recursive
-      - npm ci
+      - npm i
       - rm -rf /tmp/hugo_cache/
       - rm -rf ./public
   build:
