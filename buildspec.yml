@@ -3,37 +3,34 @@ version: 0.2
 environment_variables:
   plaintext:
     AWS_DEFAULT_REGION: "us-west-2"
-    HUGO_VERSION: "0.31.1"
-    HUGO_SHA256: "2ec6fd0493fa246a5747b0f1875d94affaaa30f11715f26abcbe1bc91c940716"
+    HUGO_VERSION: "0.70.0"
+    HUGO_SHA256: "494fdb1c95675f9477d0279343a067a17b340a7d3c104f285bd745790e3bfc72"
     NODE_ENV: "development"
+    HUGO_ENV: "production"
 
 phases:
   install:
     commands:
-      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_${HUGO_VERSION}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
       - echo "${HUGO_SHA256}  /tmp/hugo.tar.gz" | sha256sum -c -
       - tar xf /tmp/hugo.tar.gz -C /tmp
       - mv /tmp/hugo /usr/bin/hugo
       - rm -rf /tmp/hugo*
-      - for FILE in $(git ls-files); do TIME=$(git log --pretty=format:%cd -n 1 --date=iso -- "$FILE"); TIME=$(date -d "$TIME" +%Y%m%d%H%M.%S); echo "$TIME > $FILE"; touch -m -t "$TIME" "$FILE"; done
   pre_build:
     commands:
       - git submodule update --init --recursive
-      - npm install
+      - npm ci
       - rm -rf /tmp/hugo_cache/
       - rm -rf ./public
   build:
     commands:
-      - npm run images
-      - until (HUGO_ENV=production hugo --ignoreCache; npm run optimize:html; bash bin/alias/build; npm run amphtml:validate); do echo "apm failed. Retrying"; sleep 2; done
+      - hugo -b https://danielmuller.me/ --gc --minify
   post_build:
     commands:
-      - aws --region us-west-2 s3 sync --delete --exclude '*' --include '*.html' --include '*.xml' --cache-control 'max-age=43200' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
-      - aws --region us-west-2 s3 sync --delete  --exclude '*.webp' --exclude '*.html' --exclude '*.xml' --exclude '.gitkeep' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
-      - aws --region us-west-2 s3 sync --delete  --exclude '*' --include '*.webp' --content-type 'image/webp' --cache-control 'max-age=31536000' --storage-class REDUCED_REDUNDANCY --acl public-read public/ s3://danielmuller.me/
-      - aws --region us-west-2 s3 cp --storage-class REDUCED_REDUNDANCY --cache-control 'max-age=300' --acl public-read public/sitemap.xml s3://danielmuller.me/sitemap.xml
-      - bash bin/alias/push danielmuller
+      - bash bin/alias/build
+      - hugo deploy
+      - bash bin/alias/push
 cache:
   paths:
     - 'node_modules/**/*'
-    - 'static/images/**/*'
+    - 'resources/**/*'

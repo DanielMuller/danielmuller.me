@@ -5,7 +5,7 @@ profile=""
 if [ "X$1" != "X" ]; then
   profile="--profile $1"
 fi
-rgrep -Po '(?<=http-equiv=\"refresh\" content=\"0; url=https://danielmuller.me).*(?=\".*)' public/* | while read line; do
+rgrep -Po '(?<=http-equiv=refresh content=\"0; url=https://danielmuller.me).*(?=\".*)' public/* | while read line; do
     srcfile=`echo $line | cut -d':' -f1`
     dstfile=`echo $line | cut -d':' -f2`
     rm -f $srcfile

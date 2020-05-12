@@ -1,10 +1,11 @@
 languageCode = "en"
 title = "Daniel Muller"
-baseURL = "https://danielmuller.me/"
+baseURL = ""
 theme = "origin"
 timeout = 60000
 PygmentsCodeFences = true
 pygmentsuseclasses = true
+enableRobotsTXT = true
 
 [params]
     description = "An Ang Mo Geek in Singapore"
@@ -16,7 +17,7 @@ pygmentsuseclasses = true
     defaultSchema = "article"
     iframedomain = "iframe.danielmuller.me"
     disqusShortname = "danielmuller"
-
+    
 [permalinks]
     post = '/:year/:month/:slug/'
 [outputs]
@@ -75,3 +76,21 @@ pygmentsuseclasses = true
 
 [markup.goldmark.renderer]
   unsafe= true
+
+[deployment]
+[[deployment.targets]]
+name = "production"
+URL = "s3://danielmuller.me?region=us-west-2"
+cloudFrontDistributionID = "E15XC7I4SGL3JX"
+
+[[deployment.matchers]]
+#  Cache static assets for 1 year.
+pattern = "^.+\\.(js|css|svg|ttf)$"
+cacheControl = "max-age=31536000, no-transform, public"
+
+[[deployment.matchers]]
+pattern = "^.+\\.(png|jpg)$"
+cacheControl = "max-age=31536000, no-transform, public"
+
+[[deployment.matchers]]
+pattern = "^.+\\.(html|xml|json)$"
