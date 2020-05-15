@@ -28,7 +28,7 @@ phases:
   post_build:
     commands:
       - bash bin/alias/build
-      - hugo deploy
+      - hugo deploy --maxDeletes -1
       - bash bin/alias/push
 cache:
   paths:
