@@ -36,15 +36,17 @@ The idea is to still use the http scheme and have the app listen to another doma
 
   1. Configure app to listen to subdomain
 
-    **Edit (2015-06-07)**: As pointed out by _Sufian_, the pathPrefix param is needed:</p>
-    ```xml
-<intent-filter>
-  <action android:name="android.intent.action.VIEW"></action>
-  <category android:name="android.intent.category.DEFAULT"></category>
-  <category android:name="android.intent.category.BROWSABLE"></category>
-  <data android:scheme="http" android:host="android.app.spuul.com" android:pathPrefix=""></data>
-</intent-filter>
-    ```
+      **Edit (2015-06-07)**: As pointed out by _Sufian_, the pathPrefix param is needed:
+
+      ```xml
+      <intent-filter>
+        <action android:name="android.intent.action.VIEW"></action>
+        <category android:name="android.intent.category.DEFAULT"></category>
+        <category android:name="android.intent.category.BROWSABLE"></category>
+        <data android:scheme="http" android:host="android.app.spuul.com" android:pathPrefix=""></data>
+      </intent-filter>
+      ```
+
   2. Configure web server to redirect all request for android.app.spuul.com to redirect to market://details?id=com.spuul.android
   3. Configure web app to redirect subdomain when client is an Android device, adding wanted path depending on context
   4. If the app is installed:
