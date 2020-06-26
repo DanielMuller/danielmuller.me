@@ -16,8 +16,6 @@ enableRobotsTXT = true
     googleanalytics = "UA-1341906-8"
     defaultSchema = "article"
     iframedomain = "iframe.danielmuller.me"
-    disqusShortname = "danielmuller"
-    
 [permalinks]
     post = '/:year/:month/:slug/'
 [outputs]
