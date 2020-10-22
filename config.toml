@@ -8,7 +8,7 @@ pygmentsuseclasses = true
 enableRobotsTXT = true
 
 [params]
-    description = "An Ang Mo Geek in Singapore"
+    description = "An Swiss Geek in Portugal"
     locale = "en_US"
     logo = "/logos/favicon-120x120.png"
     ampElements = ["amp-analytics", "amp-twitter"]
@@ -28,7 +28,7 @@ enableRobotsTXT = true
     name = "Daniel Muller"
     bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>Now working in a Singaporean Start-up <a href=\"https://spuul.com/\" target=\"_blank\">Spuul</a>, breathing Ruby, Bash and AWS as SysAdmin with the same multipurpose Swiss-Army knife style.</p>"
     shortbio = ""
-    location = "Singapore"
+    location = "Portugal"
     website = "https://daniel.ctrlaltdel.ch"
     twitter = "DanielMullerCH"
     github = "DanielMuller"
