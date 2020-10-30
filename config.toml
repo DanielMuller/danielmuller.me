@@ -8,7 +8,7 @@ pygmentsuseclasses = true
 enableRobotsTXT = true
 
 [params]
-    description = "An Swiss Geek in Portugal"
+    description = "A Swiss Geek previously in Singapore, now in Portugal"
     locale = "en_US"
     logo = "/logos/favicon-120x120.png"
     ampElements = ["amp-analytics", "amp-twitter"]
