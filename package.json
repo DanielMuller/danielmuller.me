@@ -34,7 +34,7 @@
   },
   "homepage": "https://github.com/DanielMuller/danielmuller.me#readme",
   "devDependencies": {
-    "autoprefixer": "^9.7.6",
-    "postcss-cli": "^7.1.1"
+    "autoprefixer": "^9.8.6",
+    "postcss-cli": "^7.1.2"
   }
 }
