@@ -5,7 +5,7 @@ date = 2020-10-28T11:27:40+00:00
 lastmod = 2020-10-28T11:27:40+00:00
 draft = false
 image = "images/2020/10/ses-forward.png"
-Excerpt = "If you don't need (or don't want to pay for) a real E-Mail solution for your domain, but just need to communicate nice looking addresses and have them forwarded to your real, fully fledged E-Mail host. Then this solution is for you."
+summary = "If you don't need (or don't want to pay for) a real E-Mail solution for your domain, but just need to communicate nice looking addresses and have them forwarded to your real, fully fledged E-Mail host. Then this solution is for you."
 categories = [
   "email",
   "Serverless"

@@ -4,7 +4,7 @@ title = "Resize Images on the Fly"
 date = 2020-03-05T10:21:27+08:00
 lastmod = 2020-03-05T10:21:27+08:00
 draft = false
-Excerpt = "Clients know the best what sizes an image should be (screen size, dpr, ...). Don't pre-generate useless sizes and let them ask for the dimensions that suits them best."
+summary = "Clients know the best what sizes an image should be (screen size, dpr, ...). Don't pre-generate useless sizes and let them ask for the dimensions that suits them best."
 categories = [
   "Media",
   "Static",
