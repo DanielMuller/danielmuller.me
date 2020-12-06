@@ -1,0 +1,14 @@
+<svg height="400" version="1.1" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
+  <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+  <path fill="#e85c0c" stroke="#ffffff" d="M320,180L261.9179169955001,318.2984874604866A150,150,0,1,1,378.08208300449985,318.2984874604866Z" stroke-width="1" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linejoin: round;"></path>
+  <path fill="#3a9e16" stroke="#ffffff" d="M320,180L378.08208300449985,318.2984874604866A150,150,0,0,1,261.91791699550015,318.2984874604867Z" stroke-width="1" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linejoin: round;"></path>
+  
+  <circle cx="465" cy="90" r="5" fill="#e85c0c" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-23.8125)"></circle>
+  <text x="480" y="90" text-anchor="start" font-family="&quot;Arial&quot;" font-size="10px" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: 12px Arial, sans-serif;" font="12px Arial, sans-serif" transform="matrix(1,0,0,1,0,-23.8125)">
+    <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">False Negative: 559 (87.3%)</tspan>
+  </text>
+  <circle cx="465" cy="106.8" r="5" fill="#3a9e16" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-23.8125)"></circle>
+  <text x="480" y="106.8" text-anchor="start" font-family="&quot;Arial&quot;" font-size="10px" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: 12px Arial, sans-serif;" font="12px Arial, sans-serif" transform="matrix(1,0,0,1,0,-23.8125)">
+    <tspan dy="3.9953125000000114" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Ham: 81 (12.7%)</tspan>
+  </text>
+</svg>

@@ -1,0 +1,22 @@
+<svg height="400" version="1.1" width="640" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" style="overflow: hidden; position: relative;">
+  <defs style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);"></defs>
+  <path fill="#e85c0c" stroke="#ffffff" d="M320,180L189.81659925814128,254.51363748525915A150,150,0,1,1,450.1834007418587,254.5136374852592Z" stroke-width="1" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linejoin: round;"></path>
+  <path fill="#d10202" stroke="#ffffff" d="M320,180L450.1834007418587,254.5136374852592A150,150,0,0,1,255.4233354787557,315.3877926524791Z" stroke-width="1" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linejoin: round;"></path>
+  <path fill="#3a9e16" stroke="#ffffff" d="M320,180L255.4233354787557,315.3877926524791A150,150,0,0,1,189.81659925814125,254.51363748525912Z" stroke-width="1" stroke-linejoin="round" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); stroke-linejoin: round;"></path>
+  <path fill="#000000" stroke="none" d="M320,180L189.81659925814128,254.51363748525915A150,150,0,1,1,450.1834007418587,254.5136374852592Z" fill-opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0;"></path>
+  <path fill="#000000" stroke="none" d="M320,180L450.1834007418587,254.5136374852592A150,150,0,0,1,255.4233354787557,315.3877926524791Z" fill-opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0;"></path>
+  <path fill="#000000" stroke="none" d="M320,180L255.4233354787557,315.3877926524791A150,150,0,0,1,189.81659925814125,254.51363748525912Z" fill-opacity="0" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); fill-opacity: 0;"></path>
+
+  <circle cx="465" cy="90" r="5" fill="#e85c0c" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-23.8125)"></circle>
+  <text x="480" y="90" text-anchor="start" font-family="&quot;Arial&quot;" font-size="10px" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: 12px Arial, sans-serif;" font="12px Arial, sans-serif" transform="matrix(1,0,0,1,0,-23.8125)">
+    <tspan dy="4" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">False Negative: 559 (66.6%)</tspan>
+  </text>
+  <circle cx="465" cy="106.8" r="5" fill="#d10202" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-23.8125)"></circle>
+  <text x="480" y="106.8" text-anchor="start" font-family="&quot;Arial&quot;" font-size="10px" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: 12px Arial, sans-serif;" font="12px Arial, sans-serif" transform="matrix(1,0,0,1,0,-23.8125)">
+    <tspan dy="3.9953125000000114" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Spam: 200 (23.8%)</tspan>
+  </text>
+  <circle cx="465" cy="123.61875" r="5" fill="#3a9e16" stroke="none" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);" transform="matrix(1,0,0,1,0,-23.8125)"></circle>
+  <text x="480" y="123.61875" text-anchor="start" font-family="&quot;Arial&quot;" font-size="10px" stroke="none" fill="#000000" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0); text-anchor: start; font: 12px Arial, sans-serif;" font="12px Arial, sans-serif" transform="matrix(1,0,0,1,0,-23.8125)">
+    <tspan dy="4.001562500000006" style="-webkit-tap-highlight-color: rgba(0, 0, 0, 0);">Ham: 81 (9.6%)</tspan>
+  </text>
+</svg>

@@ -1,0 +1,107 @@
+<svg id="sankey_svg" height="500" width="800" xmlns="http://www.w3.org/2000/svg" version="1.1">
+  <g>
+    <rect width="100%" height="100%" fill="rgb(255, 255, 255)"></rect>
+    <g transform="translate(12,12)">
+      <g>
+        <path class="link" d="M10,231.74660086986648C81.6,231.74660086986648 81.6,231.7411418522425 153.2,231.7411418522425" style="fill: none; stroke-width: 440; stroke: rgb(31, 119, 180); stroke-opacity: 0.4;">
+          <title>E-Mails &#8594; SES: 840</title>
+        </path>
+        <path class="link" d="M163.2,179.3601894712901C234.79999999999998,179.3601894712901 234.79999999999998,167.61904761904765 306.4,167.61904761904765" style="fill: none; stroke-width: 335.238; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;">
+          <title>SES &#8594; AWS Pass: 640</title>
+        </path>
+        <path class="link" d="M316.4,188.83333333333334C448.49999999999994,188.83333333333334 448.49999999999994,204.4047619047619 580.5999999999999,204.4047619047619" style="fill: none; stroke-width: 292.81; stroke: rgb(255, 187, 120); stroke-opacity: 0.4;">
+          <title>AWS Pass &#8594; False Negative: 559</title>
+        </path>
+        <path class="link" d="M590.5999999999999,195.76190476190476C678.3,195.76190476190476 678.3,180.1904761904762 766,180.1904761904762" style="fill: none; stroke-width: 275.524; stroke: rgb(152, 223, 138); stroke-opacity: 0.4;">
+          <title>False Negative &#8594; Delivered: 526</title>
+        </path>
+        <path class="link" d="M163.2,398.8363799474806C233.29999999999998,398.8363799474806 233.29999999999998,418.1428571428571 303.4,418.1428571428571" style="fill: none; stroke-width: 103.714; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;">
+          <title>SES &#8594; AWS Spam: 198</title>
+        </path>
+        <path class="link" d="M313.4,418.1428571428571C539.2,418.1428571428571 539.2,423.0952380952381 765,423.0952380952381" style="fill: none; stroke-width: 103.714; stroke: rgb(214, 39, 40); stroke-opacity: 0.4;">
+          <title>AWS Spam &#8594; Dropped: 198</title>
+        </path>
+        <path class="link" d="M316.4,21.21428571428573C447.49999999999994,21.21428571428573 447.49999999999994,21.214285714285715 578.5999999999999,21.214285714285715" style="fill: none; stroke-width: 42.4286; stroke: rgb(44, 160, 44); stroke-opacity: 0.4;">
+          <title>AWS Pass &#8594; Ham: 81</title>
+        </path>
+        <path class="link" d="M588.5999999999999,21.214285714285715C677.3,21.214285714285715 677.3,21.214285714285715 766,21.214285714285715" style="fill: none; stroke-width: 42.4286; stroke: rgb(44, 160, 44); stroke-opacity: 0.4;">
+          <title>Ham &#8594; Delivered: 81</title>
+        </path>
+        <path class="link" d="M590.5999999999999,342.1666666666667C629.6999999999999,342.1666666666667 629.6999999999999,356.4879499878378 668.8,356.4879499878378" style="fill: none; stroke-width: 17.2857; stroke: rgb(232, 92, 12); stroke-opacity: 0.4;">
+          <title>False Negative &#8594; No MX: 33</title>
+        </path>
+        <path class="link" d="M678.8,356.4879499878378C721.9,356.4879499878378 721.9,362.59523809523813 765,362.59523809523813" style="fill: none; stroke-width: 17.2857; stroke: rgb(214, 39, 40); stroke-opacity: 0.4;">
+          <title>No MX &#8594; Dropped: 33</title>
+        </path>
+        <path class="link" d="M163.2,451.217332328433C233.79999999999998,451.217332328433 233.79999999999998,475.4761904761905 304.4,475.4761904761905" style="fill: none; stroke-width: 1.04762; stroke: rgb(255, 127, 14); stroke-opacity: 0.4;">
+          <title>SES &#8594; AWS SPF: 2</title>
+        </path>
+        <path class="link" d="M314.4,475.4761904761905C539.7,475.4761904761905 539.7,475.4761904761905 765,475.4761904761905" style="fill: none; stroke-width: 1.04762; stroke: rgb(214, 39, 40); stroke-opacity: 0.4;">
+          <title>AWS SPF &#8594; Dropped: 2</title>
+        </path>
+      </g>
+      <g>
+        <g class="node" transform="translate(0,11.746600869866498)">
+          <rect height="440" width="10" id="r0" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(15, 58, 88);">
+            <title>E-Mails: 840</title>
+          </rect>
+          <text x="16" y="220" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">E-Mails: 840</text>
+        </g>
+        <g class="node" transform="translate(153.2,11.741141852242494)">
+          <rect height="440" width="10" id="r1" shape-rendering="crispEdges" style="fill: rgb(31, 119, 180); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(85, 97, 113);">
+            <title>SES: 840</title>
+          </rect>
+          <text x="16" y="220" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">SES: 840</text>
+        </g>
+        <g class="node" transform="translate(306.4,1.4210854715202004e-14)">
+          <rect height="335.23809523809524" width="10" id="r4" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(124, 62, 6);">
+            <title>AWS Pass: 640</title>
+          </rect>
+          <text x="16" y="167.61904761904762" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">AWS Pass: 640</text>
+        </g>
+        <g class="node" transform="translate(580.5999999999999,58)">
+          <rect height="292.8095238095238" width="10" id="r6" shape-rendering="crispEdges" style="fill: rgb(255, 187, 120); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(21, 78, 21);">
+            <title>False Negative: 559</title>
+          </rect>
+          <text x="-6" y="146.4047619047619" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">False Negative: 559</text>
+        </g>
+        <g class="node" transform="translate(766,0)">
+          <rect height="317.95238095238096" width="10" id="r7" shape-rendering="crispEdges" style="fill: rgb(44, 160, 44); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(74, 109, 67);">
+            <title>Delivered: 607</title>
+          </rect>
+          <text x="-6" y="158.97619047619048" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Delivered: 607</text>
+        </g>
+        <g class="node" transform="translate(304.4,474.95238095238096)">
+          <rect height="1.0476190476190477" width="10" id="r2" shape-rendering="crispEdges" style="fill: rgb(214, 39, 40); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(124, 62, 6);">
+            <title>AWS SPF: 2</title>
+          </rect>
+          <text x="16" y="0.5238095238095238" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">AWS SPF: 2</text>
+        </g>
+        <g class="node" transform="translate(303.4,366.2857142857143)">
+          <rect height="103.71428571428572" width="10" id="r3" shape-rendering="crispEdges" style="fill: rgb(255, 127, 14); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(124, 62, 6);">
+            <title>AWS Spam: 198</title>
+          </rect>
+          <text x="16" y="51.85714285714286" dy=".35em" text-anchor="start" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">AWS Spam: 198</text>
+        </g>
+        <g class="node" transform="translate(765,353.95238095238096)">
+          <rect height="122.04761904761905" width="10" id="r5" shape-rendering="crispEdges" style="fill: rgb(214, 39, 40); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(124, 91, 58);">
+            <title>Dropped: 233</title>
+          </rect>
+          <text x="-6" y="61.023809523809526" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Dropped: 233</text>
+        </g>
+        <g class="node" transform="translate(668.8,347.8450928449806)">
+          <rect height="17.28571428571429" width="10" id="r8" shape-rendering="crispEdges" style="fill: rgb(232, 92, 12); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(104, 19, 19);">
+            <title>No MX: 33</title>
+          </rect>
+          <text x="-6" y="8.642857142857144" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">No MX: 33</text>
+        </g>
+        <g class="node" transform="translate(578.5999999999999,0)">
+          <rect height="42.42857142857143" width="10" id="r9" shape-rendering="crispEdges" style="fill: rgb(44, 160, 44); fill-opacity: 0.9; stroke-width: 0; stroke: rgb(124, 74, 73);">
+            <title>Ham: 81</title>
+          </rect>
+          <text x="-6" y="21.214285714285715" dy=".35em" text-anchor="end" style="stroke-width: 0; font-family: sans-serif; font-size: 15px; font-weight: 400; fill: rgb(0, 0, 0);">Ham: 81</text>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
