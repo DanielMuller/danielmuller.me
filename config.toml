@@ -6,6 +6,7 @@ timeout = 300000
 PygmentsCodeFences = true
 pygmentsuseclasses = true
 enableRobotsTXT = true
+enableEmoji = true
 
 [params]
     description = "A Swiss Geek previously in Singapore, now in Portugal"
