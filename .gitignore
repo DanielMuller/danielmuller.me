@@ -4,3 +4,4 @@ static/images/
 bin/alias/empty
 bin/alias/push
 resources/
+.hugo_build.lock
