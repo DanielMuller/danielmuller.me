@@ -1,96 +1,96 @@
-languageCode = "en"
-title = "Daniel Muller"
+PygmentsCodeFences = true
 baseURL = ""
+enableEmoji = true
+enableRobotsTXT = true
+languageCode = "en"
+pygmentsuseclasses = true
 theme = "origin"
 timeout = 300000
-PygmentsCodeFences = true
-pygmentsuseclasses = true
-enableRobotsTXT = true
-enableEmoji = true
+title = "Daniel Muller"
 
 [params]
-    description = "A Swiss Geek previously in Singapore, now in Portugal"
-    locale = "en_US"
-    logo = "/logos/favicon-120x120.png"
-    ampElements = ["amp-analytics", "amp-twitter"]
-    themeColor = "#ffffff"
-    googleanalytics = "UA-1341906-8"
-    defaultSchema = "article"
+ampElements = ["amp-analytics", "amp-twitter"]
+defaultSchema = "article"
+description = "A Swiss Geek previously in Singapore, now in Portugal"
+googleanalytics = "G-T6ZT3FL6DM"
+locale = "en_US"
+logo = "/logos/favicon-120x120.png"
+themeColor = "#ffffff"
 [permalinks]
-    post = '/:year/:month/:slug/'
+post = '/:year/:month/:slug/'
 [outputs]
-    home = [ "HTML", "RSS"]
-    page = [ "HTML"]
+home = ["HTML", "RSS"]
+page = ["HTML"]
 [sitemap]
-  changefreq = "monthly"
-  priority = 0.5
-  filename = "sitemap.xml"
+changefreq = "monthly"
+filename = "sitemap.xml"
+priority = 0.5
 [author]
-    name = "Daniel Muller"
-    bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>I worked for 9 years in a Singaporean Start-up <a href=\"https://spuul.com/\" target=\"_blank\">Spuul</a>, breathing Ruby, Bash and AWS first as SysAdmin and later as Head of Cloud Infrastructure with the same multipurpose Swiss-Army knife style.</p><p>I moved now to Portugal, looking for the next gig.</p>"
-    shortbio = ""
-    location = "Portugal"
-    website = "https://daniel.ctrlaltdel.ch"
-    twitter = "DanielMullerCH"
-    github = "DanielMuller"
-    linkedin = "danielmullerch"
-    flipboard = "danielmuller"
-    devto = "danielmuller"
-    reddit = "DanielMullerCH"
+bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>I worked for 9 years in a Singaporean Start-up <a href=\"https://spuul.com/\" target=\"_blank\">Spuul</a>, breathing Ruby, Bash and AWS first as SysAdmin and later as Head of Cloud Infrastructure with the same multipurpose Swiss-Army knife style.</p><p>I moved now to Portugal, looking for the next gig.</p>"
+devto = "danielmuller"
+flipboard = "danielmuller"
+github = "DanielMuller"
+linkedin = "danielmullerch"
+location = "Portugal"
+name = "Daniel Muller"
+reddit = "DanielMullerCH"
+shortbio = ""
+twitter = "DanielMullerCH"
+website = "https://daniel.ctrlaltdel.ch"
 
 [params.share]
-    twitter = true
-    gplus = true
-    pinterest = true
-    facebook = true
+facebook = true
+gplus = true
+pinterest = true
+twitter = true
 
 [params.favicon]
-    manifest = "manifest.json"
-    basename = "/logos/favicon"
-    ms_tilecolor = "#FFFFFF"
-    icon = [16, 32, 96, 192]
-    apple_touch = [57, 60, 72, 76, 114, 120, 144, 152, 180]
-    ms = [144]
-    ms_config = "browserconfig.xml"
+apple_touch = [57, 60, 72, 76, 114, 120, 144, 152, 180]
+basename = "/logos/favicon"
+icon = [16, 32, 96, 192]
+manifest = "manifest.json"
+ms = [144]
+ms_config = "browserconfig.xml"
+ms_tilecolor = "#FFFFFF"
 
 [[menu.links]]
-    pre = "My Stuff"
-    name = 'Follow me'
-    weight = 210
-    url = 'https://daniel.ctrlaltdel.ch/'
+name = 'Follow me'
+pre = "My Stuff"
+url = 'https://daniel.ctrlaltdel.ch/'
+weight = 210
 [[menu.links]]
-    name = 'My photo gallery'
-    weight = 220
-    url = 'https://daniel.mesphotos.ch/'
+name = 'My photo gallery'
+url = 'https://daniel.mesphotos.ch/'
+weight = 220
 [[menu.links]]
-    name = 'My personal blog'
-    weight = 230
-    url = 'https://farfromhome.asia/'
+name = 'My personal blog'
+url = 'https://farfromhome.asia/'
+weight = 230
 
 [imaging]
-  resampleFilter = "CatmullRom"
-  quality = 95
-  
+
+quality = 95
+resampleFilter = "CatmullRom"
 [imaging.exif]
-  includeFields = ""
+includeFields = ""
 
 [markup.goldmark.renderer]
-  unsafe= true
+unsafe = true
 
 [deployment]
 [[deployment.targets]]
-name = "production"
 URL = "s3://danielmuller.me?region=us-west-2"
 cloudFrontDistributionID = "E15XC7I4SGL3JX"
+name = "production"
 
 [[deployment.matchers]]
 #  Cache static assets for 1 year.
-pattern = "^.+\\.(js|css|svg|ttf)$"
 cacheControl = "max-age=31536000, no-transform, public"
+pattern = "^.+\\.(js|css|svg|ttf)$"
 
 [[deployment.matchers]]
-pattern = "^.+\\.(png|jpg)$"
 cacheControl = "max-age=31536000, no-transform, public"
+pattern = "^.+\\.(png|jpg)$"
 
 [[deployment.matchers]]
 pattern = "^.+\\.(html|xml|json)$"
