@@ -26,7 +26,7 @@ changefreq = "monthly"
 filename = "sitemap.xml"
 priority = 0.5
 [author]
-bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>I worked for 9 years in a Singaporean Start-up <a href=\"https://spuul.com/\" target=\"_blank\">Spuul</a>, breathing Ruby, Bash and AWS first as SysAdmin and later as Head of Cloud Infrastructure with the same multipurpose Swiss-Army knife style.</p><p>I moved now to Portugal, looking for the next gig.</p>"
+bio = "<p>After several years breathing PHP, Perl, Python, Bash and bare-metal as multipurpose SysAdmin in a swiss geospatial company Geomatic, I exchanged snow, cows, mountains and maps for sun, chicken rice, flip-flops and movies.</p><p>I worked for 9 years in a Singaporean Start-up <a href=\"https://spuul.com/\" target=\"_blank\">Spuul</a>, breathing Ruby, Bash and AWS first as SysAdmin and later as Head of Cloud Infrastructure with the same multipurpose Swiss-Army knife style.</p><p>I moved now to Portugal, and working as a Serverless Consultant for <a href=\"https://serverlessguru.com/\" target=\"_blank\">Serverless Guru</a>.</p>"
 devto = "danielmuller"
 flipboard = "danielmuller"
 github = "DanielMuller"
