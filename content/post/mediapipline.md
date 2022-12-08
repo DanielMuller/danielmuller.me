@@ -22,19 +22,19 @@ tags = [
 +++
 You are in possession of some videos that you want to distribute or share.
 
-Your use case could be as simple as needing to share a lower resolution of a video taken on your smartphone or camera. Or your use case could be as complex as sharing production quality copies of the latest movie you are producing.
+Your use case could be as simple as needing to share a lower resolution of a video taken on your smartphone or camera. Or your use case could be as complex as sharing production-quality copies of the latest movie you are producing.
 
-For both cases you can use Serverless Cloud Products to address your need. [AWS Elemental MediaConvert](https://aws.amazon.com/mediaconvert/), one of the Media tools from the [AWS Elemental](https://www.elemental.com/) family, will allow you to solve your problem.
+For both cases you can use Serverless Cloud Products to address your needs. [AWS Elemental MediaConvert](https://aws.amazon.com/mediaconvert/), one of the Media tools from the [AWS Elemental](https://www.elemental.com/) family, will allow you to solve your problem.
 
-Or perhaps, you want to distribute your content to viewers around the globe allowing them to watch on any device? Then you can use another Serverless Cloud Products from the AWS Elemental family: [AWS Elemental MediaPackage](https://aws.amazon.com/mediapackage/).
+Or perhaps, you want to distribute your content to viewers around the globe allowing them to watch on any device? Then you can use another Serverless Cloud Product from the AWS Elemental family: [AWS Elemental MediaPackage](https://aws.amazon.com/mediapackage/).
 
 ## Services used
-Video files are complex. You need to worry about image and audio. You need to worry about container, codecs, bitrate, pixel aspect ratio and more.
+Video files are complex. You need to worry about image and audio, which means you need to worry about container, codecs, bitrate, pixel aspect ratio and more.
 
 ### MediaConvert
-MediaConvert allows to transcode file-based content. Which means that you can transform a Video file into a video file of a different format and size.
+MediaConvert allows you to transcode file-based content. This means you can transform a video file into a different format and size.
 
-But MediaConvert is ore that just transformation. We won't get into details of all functionalities in this article, some noticeable features:
+But MediaConvert is more that just transformation. We won't get into details of all functionalities in this article, but here are some noticeable features:
 * Watermarking
 * Graphic overlay (static or motion)
 * Select parts (time or size) of an Input
@@ -43,9 +43,9 @@ But MediaConvert is ore that just transformation. We won't get into details of a
 * ...
 
 ### MediaPackage
-AWS Elemental MediaPackage is a Just-In-Time media packager for your existing assets. It will generate the relevant manifest for a group of video sources.
+AWS Elemental MediaPackage is a Just-In-Time (JIT) media packager for your existing assets. It will generate the relevant manifest for a group of video sources.
 
-It not only allows to define multiple qualities of the same video, but allows to add multiple audio sources and different video sources like camera angles.
+It not only allows you to define multiple qualities of the same video, but allows to add multiple audio sources and different video sources like camera angles.
 
 For our use case, we are only interested in providing different qualities of the same content and only a single audio track.
 
@@ -54,7 +54,7 @@ MediaPackage uses the formats created by MediaConvert and generates on the fly a
 ## Simple Use case: Reduce and Convert for mobile sharing
 You created a FHD (1920x1080) video with your camera. You camera creates movies in uncompressed QuickTime format. Most of the devices won't be able to read this format unless they have the right codecs installed.
 
-To allow recipients to play your video, you need to convert it to an MP4 container and the H.264 codec (de facto standard for Web distribution). You also want to improve the download speed.
+To allow recipients to play your video, you need to convert it to an MP4 container and the H.264 codec (de facto standard for Web distribution). You will also want to improve the download speed.
 
 * Upload your source file to S3
 * Trigger a MediaConvert job using this file
@@ -72,7 +72,7 @@ To allow recipients to play your video, you need to convert it to an MP4 contain
 | Size | 37 MB | 21.7 MB | 12.9 MB |
 | Bitrate | 10836 kb/s | 6429 kb/s | 3835 kb/s |
 
-Both outputs were creating in a single MediaConvert job that took 17s.
+Both outputs were created in a single MediaConvert job that took 17 seconds.
 
 ## More complex use case: Create content for web distribution
 In this use case, we want to distribute a 4K (3840x2160) 90 minutes movie. We want our viewer to enjoy our content on any type of screen: from small smartphones to big TV screens.
@@ -84,9 +84,9 @@ We need to be bandwidth conscious and not ship more than the viewer can consume.
 MP4 container and H.264 Codec is a combination that can be viewed by most media players (smartphones, TV, Set-top boxes, Gaming devices, ...). We will use this format to distribute our content.
 
 ### Screen size consideration
-We pre-render our content to adapt to our viewers screen size. Reducing the dimensions also allows to reduce the bandwith needed.
+We pre-render our content to adapt to our viewers screen size. Reducing the dimensions also allows us to reduce the bandwith needed.
 
-Unless mentioned, we will use H.264 and source frame rate.
+Unless mentioned, we will use H.264 and the source frame rate.
 
 * SD: 480 x 270, 400kbps, 15fps
 * SD: 640 x 360, 700kbps
@@ -100,7 +100,7 @@ If we distribute a single file, the client would be stuck on a single quality. W
 
 To allow a streaming-like experience, we will use a distribution format named [HLS](https://en.wikipedia.org/wiki/HTTP_Live_Streaming) (HTTP Live Streaming) and [Dash](https://dashif.org/).
 
-Both format are very similar in the concept, the choice of their usage depends on the players OS. For simplification, one could say that HLS is for Apple devices and Dash for others, but in reality it's slightly more complex.
+Both format are very similar in the concept, but the choice of their usage depends on the players OS. For simplification, one could say that HLS is for Apple devices and Dash for others, but in reality it's slightly more complex.
 
 The idea behind theses formats, is to split the movie in little chunks of a few seconds and define the structure through a manifest file.
 
@@ -319,7 +319,7 @@ Properties:
 * A rule on EventBridge listens to "Object:Created" events and triggers the execution of the "Conversion" Step Function.
 
 ### Conversion Step Function
-* Using a Lambda function and [https://ffmpeg.org/](ffmpeg), the source file is analyzed
+* Using a Lambda function and [https://ffmpeg.org/](ffmpeg), the source file is analyzed with _ffprobe_
     * Bitrate
     * Dimensions
     * Codecs
@@ -327,7 +327,7 @@ Properties:
   * A naming convention could be used to interact with IMDB to gather more informations
 * An entry is created in DynamoDB
 * The video is sent to [Rekognition](https://aws.amazon.com/rekognition/) to extract labels, persons, ... _Not implemented for this article_
-* A Lambda function builts the outputs based on the source file definition and triggers MediaConvert
+* A Lambda function builds the outputs based on the source file definition and triggers MediaConvert
   * We don't create a rendition bigger than the source
   * We don't create renditions with a higher bitrate than the source
   * Generate video stills to be used as covers
@@ -337,7 +337,7 @@ Properties:
 * Store still informations to DynamoDB
   * Images can be used by a CRM as Video covers
 * Store renditions informations to DynamoDB
-  * This files can be used for download (offline viewing)
+  * These files can be used for download (offline viewing)
 * A Lambda function creates a SMIL manifest
 * A Lambda function creates a package using the manifest and the pre-defined HLS and Dash outputs
 * The URLs are stored to DynamoDB
@@ -394,7 +394,9 @@ All we needed to do to produce ready consumable content, was to upload this file
   height="180"
   layout="intrinsic"
 >}}
+
 ### Adaptive bitrates
+
 **HLS**
 
 {{<amp-video
