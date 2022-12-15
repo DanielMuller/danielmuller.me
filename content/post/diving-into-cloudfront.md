@@ -33,6 +33,15 @@ In addition to the traditional pull and cache usage, Cloudfront can also be used
 - A Web Server
 - An Application Server
 
+## Why is using a CDN relevant?
+The main reason to improve speed of delivery on static content. By caching the content on the CDN edge, you not only reduce the download time from a few seconds to a few milliseconds, but you also reduce the load and amount of requests on your backend (Network, IO, CPU, Memory, ...).
+
+Static content can be defined as content not changing between two identical requests done in the same time frame.
+
+Identical can be as simple as the same URI, or as fine grained as down to the authentication header. The time frame can range between 1 second to 1 year.
+
+The most common case, is caching resources like Javascript or CSS and serving the same file to all users for ever. But caching a JSON response tailored to a user (Authentication header) for a few seconds reduces the backend calls when the user has the well known "frenetic browser reload syndrome".
+
 ## Edges, Mid-Tier Caches and Origins
 Cloudfront isn't "just" some servers in datacenters around the world. The service is a layered network of _Edge Locations_ and _Regional Edge Caches_ (or _Mid-Tier Caches_).
 
@@ -45,7 +54,7 @@ src="images/2022/11/cloudfront-edges.png"
 caption="Cloudfront Edge Locations, Regional Edge Caches and Origins"
 >}}
 
-Not only will the visitors benefit on download speed by retrieving content cached on the same _Edge Location_, but visitors in the same region using different _Edge Locations_ will also benefit from the content cached at the _Region Edge Cache_ level by not having the need retrieve the content from the Origin.
+Not only will the visitors benefit on download speed by retrieving content cached on the same _Edge Location_, but visitors in the same region using different _Edge Locations_ will also benefit from the content cached at the _Regional Edge Cache_ level by not having the need retrieve the content from the Origin.
 
 ## Classic Pull and Cache Setup
 Before diving into the deep end, let's refresh our memories with some of the basics of Cloudfront.
@@ -285,9 +294,9 @@ You have two solutions to interact with this requests/responses:
     - Database query
     - Body rewrite/validation
 
-When to use which depends on the use case. If you don't need to access network resources, Cloudfront Functions is the right choice. Even if they are executed on each request (viewer-request), you would need a very good hit ratio to get cheaper with Lambda@Edge (origin-request).
+When to use which depends on the use case. If you don't need to access network resources, Cloudfront Functions is the right choice. Even if they are executed on each request (viewer-request), you would need a very good hit ratio to get cheaper executions with Lambda@Edge (when executed only on cache miss on origin-request).
 
-Furthermore, the need to deploy Lambda@Edge to _us-east-1_ makes it a cumbersome task when you want to define your stack in a single Cloudformation template deployed to any other region than _us_east_1.
+Furthermore, the need to deploy Lambda@Edge to _us-east-1_ makes it a cumbersome task when you want to define your stack in a single Cloudformation template deployed to any other region than _us-east-1_.
 
 If you need to access network resources or need more memory and time to execute your code, then Lambda@Edge is the right choice.
 
@@ -771,8 +780,8 @@ __Cloudfront Function__
     }
 }
 ```
-
-## Networking Router
+## Less conventional usages
+### Networking Router
 Even if you don't need the caching functionalities of Cloudfront (POST requests or disabling cache on GET), you can still use Cloudfront to act as a Networking Router, by sending your visitor traffic to the nearest edge. From the edge to the origin, the performant AWS Backbone will be used instead of your ISP's peering.
 
 By using multiples behaviors, you can route your traffic to different backends that don't need to be in the same region or even inside AWS.
@@ -784,17 +793,17 @@ caption="Leveraging the AWS Backbone over the ISP's Peering"
 
 As an example, [S3 Transfer Acceleration](https://aws.amazon.com/s3/transfer-acceleration/) uses Cloudfront as the endpoint, forcing the networking path to the nearest Edge Location and leveraging the AWS backbone to reach the bucket.
 
-## Firewall
+### Firewall
 In addition to use [AWS WAF](https://aws.amazon.com/waf/) with Cloudfront to protect your Origin application, Cloudfront also provides a default DDOS protection. You can also deny access to visitors from specific countries.
 
 By adding [Origin Shield](https://aws.amazon.com/about-aws/whats-new/2020/10/announcing-amazon-cloudfront-origin-shield/), you add an additional layer of caching between Cloudfront and your Origin, reducing the need for Cloudfront to retrieve content from your Origin. This helps to reduce the load on your origin and improves the CDN hit ratio (and therefore download speed) for your visitors.
 
-## Application Server
-By using Lambda@Edge functions, you can directly query databases like DynamoDB and apply business logic to it, without needing any Origin.
+### Application Server
+By using Lambda@Edge functions, you can directly query databases like DynamoDB and apply business logic to it, without needing any Origin (you still need to configure a dummy one, Cloudfront doesn't allow you to be Origin-less).
 
 Combining this with [DynamoDB Global Tables](https://aws.amazon.com/dynamodb/global-tables/), you can always query a table near your edge, making your application performant and reliable.
 
-## Web Server
+### Web Server
 As seen through all the examples mentioned in this article, Cloudfront can be seen as "just" an HTTP server in front of your application.
 
 Using functions (or Lambda@Edge) you can return redirections or static content without the need of any backend.
@@ -802,7 +811,7 @@ Using functions (or Lambda@Edge) you can return redirections or static content w
 By using multiples behaviors, you can route your traffic to different types backends.
 
 ## Real World Use Cases
-You can find the template used for the examples on [Github](https://github.com/serverless-guru/tempaltes/tree/master/cloudfront-samples).
+You can find the template used for the below examples on [Github](https://github.com/serverless-guru/tempaltes/tree/master/cloudfront-samples).
 
 The template provides a distribution with different backends:
 - S3 Website
@@ -897,7 +906,7 @@ __Lambda Event__:
 }
 ```
 
-### Rewrite URI to load index.html
+### Rewrite URI to serve index.html
 Nobody wants to type `/index.html` when calling a URL. Apache, Nginx and S3-Website are loading `index.html` automatically when no document is passed in the URI. When using an S3-API backend we need to provide this functionality ourselves. Cloudfront is only able to load `index.html` at the root, which is generally enough for an SPA but not for a static generated site.
 
 #### S3-Website
@@ -912,7 +921,8 @@ curl -v 'https://d3h57w0cnyb350.cloudfront.net/blog/articles/'
 < HTTP/2 200 
 < content-type: text/html
 ```
-index.html is returned, the backend is an S3-Website and has the logic to serve index.html when document name is provided.
+
+`index.html` is returned, the backend is an S3-Website and has the logic to serve index.html when document name is provided.
 
 #### S3-API without function
 - Backend: S3-API
@@ -956,10 +966,11 @@ curl -v 'https://d3h57w0cnyb350.cloudfront.net/html/articles/'
 < HTTP/2 200
 < content-type: text/html
 ```
-index.html is returned, we rewrite the incoming URI to append `index.html` to the request so that an existing key could be fetched from S3.
+
+`index.html` is returned, we rewrite the incoming URI to append `index.html` to the request so that an existing key can be fetched from S3.
 
 ### Serve localized content
-Using the browsers header `accept-language`, we are returning the content in the language requested by the viewer. The URL is the same regardless of the language, but needs to be cached according to the language. Since this header can have multiple variations, we normalize it to increase our hit ratio.
+Using the browser's `accept-language` header, we are returning the content in the language requested by the viewer. The URL is the same regardless of the language, but needs to be cached according to this language. Since this header can have multiple variations, we normalize it to increase our hit ratio.
 
 - Backend: S3-API
 - Edge function: viewer-request Cloudfront Function
@@ -1126,6 +1137,7 @@ curl -v https://private:private@d3h57w0cnyb350.cloudfront.net/private/
   </body>
 </html>
 ```
+
 ### Fetch content from DynamoDB
 We use a Lambda@Edge function on the _origin-request_ event. We fetch data from a DynamoDB Table and return the result, bypassing the request to the Origin.
 
@@ -1227,3 +1239,58 @@ curl -v "https://d3h57w0cnyb350.cloudfront.net/airport/gva"
 }
 ```
 
+### Serve alternate content in case of error
+When the Origin is unreachable, overloaded or simply unable to handle the request, instead of showing the error to the client we redirect him to an alternate site.
+
+- Backend: Any
+- Edge function: origin-response Lambda@Edge
+- Policy: managed-cacheOptimized
+
+__function__:
+```typescript
+import type { CloudFrontResponseEvent, CloudFrontResponseResult } from 'aws-lambda'
+
+export const handler = async (
+  event: CloudFrontResponseEvent,
+): Promise<CloudFrontResponseResult> => {
+  const response = event.Records[0].cf.response
+  const request = event.Records[0].cf.request
+
+  try {
+    const status = parseInt(response.status)
+    if (status >= 400 && status <= 599) {
+      return redirect(request.uri)
+    } else {
+      return response
+    }
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e as Error)
+
+    return redirect(request.uri)
+  }
+}
+
+const redirect = (uri: string): CloudFrontResponseResult => {
+  return {
+    status: '307',
+    statusDescription: 'Temporary Redirect',
+    headers: {
+      location: [
+        {
+          value: `https://alt.example.com${uri}`,
+        },
+      ],
+    },
+  }
+}
+```
+
+## What have we learnt?
+* Cloudfront is more than just a simple "pull-cache-serve" service
+* You improve delivery speed to your visitors
+* You can increase resilience by always using a healthy backend
+* You improve overall speed to your backend by leveraging AWS's backbone
+* You can modify any request to tailor the response to your visitor's device or region
+* You don't always need a backend
+* You protect your backend by reducing the amount of calls reaching it
