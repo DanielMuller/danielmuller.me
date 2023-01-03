@@ -1,8 +1,8 @@
 +++
 author = "Daniel"
 title = "Convert and distribute your videos with AWS Elemental"
-date = 2022-11-21T10:45:10+00:00
-lastmod = 2022-11-21T10:45:10+00:00
+date = 2022-12-17T10:45:10+00:00
+lastmod = 2022-12-17T10:45:10+00:00
 draft = true
 image = "images/2022/11/video.jpg"
 summary = ""
@@ -17,6 +17,7 @@ tags = [
   "S3",
   "DynamoDB"
 ]
+origin="https://serverlessguru.com/blog/convert-and-distribute-your-videos-with-aws-elemental"
 [amp]
   elements = ["amp-image", "amp-video"]
 +++
