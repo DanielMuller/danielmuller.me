@@ -811,7 +811,7 @@ Using functions (or Lambda@Edge) you can return redirections or static content w
 By using multiples behaviors, you can route your traffic to different types backends.
 
 ## Real World Use Cases
-You can find the template used for the below examples on [Github](https://github.com/serverless-guru/tempaltes/tree/master/cloudfront-samples).
+You can find the template used for the below examples on [Github](https://github.com/serverless-guru/templates/tree/master/cloudfront-samples).
 
 The template provides a distribution with different backends:
 - S3 Website
