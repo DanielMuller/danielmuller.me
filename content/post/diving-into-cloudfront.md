@@ -25,7 +25,7 @@ origin="https://serverlessguru.com/blog/diving-into-cloudfront"
 
 Cloudfront can be simply defined as a CDN (Content Delivery Network), caching your static assets in a datacenter nearer to your viewers. But Cloudfront is a lot more complex and versatile than this simple definition.
 
-Cloudfront is a "pull" CDN, which means that you don't push your content to the CDN. The content is pulled into the CDN Edge from the Origin at the first request of any piece of content.
+Cloudfront is a "pull" CDN, which means that you don't push your content to the CDN. The content is pulled into the CDN Edge from the origin at the first request of any piece of content.
 
 In addition to the traditional pull and cache usage, Cloudfront can also be used as:
 - A Networking Router
@@ -34,9 +34,9 @@ In addition to the traditional pull and cache usage, Cloudfront can also be used
 - An Application Server
 
 ## Why is using a CDN relevant?
-The main reason to improve speed of delivery on static content. By caching the content on the CDN edge, you not only reduce the download time from a few seconds to a few milliseconds, but you also reduce the load and amount of requests on your backend (Network, IO, CPU, Memory, ...).
+The main reason is to improve the speed of delivery of static content. By caching the content on the CDN edge, you not only reduce the download time from a few seconds to a few milliseconds, but you also reduce the load and amount of requests on your backend (Network, IO, CPU, Memory, ...).
 
-Static content can be defined as content not changing between two identical requests done in the same time frame.
+_Static content_ can be defined as content not changing between two identical requests done in the same time frame.
 
 Identical can be as simple as the same URI, or as fine grained as down to the authentication header. The time frame can range between 1 second to 1 year.
 
