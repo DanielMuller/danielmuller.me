@@ -1,9 +1,9 @@
 +++
 author = "Daniel"
 title = "Convert and distribute your videos with AWS Elemental"
-date = 2022-12-17T10:45:10+00:00
-lastmod = 2022-12-17T10:45:10+00:00
-draft = true
+date = 2023-02-01T09:52:00+00:00
+lastmod = 2023-02-01T09:52:00+00:00
+draft = false
 image = "images/2022/11/video.jpg"
 summary = ""
 categories = [
