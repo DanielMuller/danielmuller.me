@@ -35,7 +35,7 @@ location = "Portugal"
 name = "Daniel Muller"
 reddit = "DanielMullerCH"
 shortbio = ""
-twitter = "DanielMullerCH"
+#twitter = "DanielMullerCH"
 website = "https://daniel.ctrlaltdel.ch"
 
 [params.share]
