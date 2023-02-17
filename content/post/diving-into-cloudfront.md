@@ -1,9 +1,9 @@
 +++
 author = "Daniel"
 title = "Diving into Cloudfront"
-date = 2022-11-25T09:26:32+00:00
-lastmod = 2022-11-25T09:26:32+00:00
-draft = true
+date = 2023-02-07T22:00:00+00:00
+lastmod = 2023-02-07T22:00:00+00:00
+draft = false
 image = "images/2022/11/cloudfront-dive.jpg"
 summary = ""
 categories = [
