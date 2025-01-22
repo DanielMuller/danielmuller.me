@@ -4,14 +4,14 @@ environment_variables:
   plaintext:
     AWS_DEFAULT_REGION: "us-west-2"
     HUGO_VERSION: "0.142.0"
-    HUGO_SHA256: "7e0d180a7004519cc794ab76f1c70fa6c9572838528d9787fb13ab4934f4af28"
+    HUGO_SHA256: "457fbcca8d919a503087ec26420cca89d58da321318b5ef423b5ffdb24716424"
     NODE_ENV: "development"
     HUGO_ENV: "production"
 
 phases:
   install:
     commands:
-      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
+      - curl -Ls https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_withdeploy_${HUGO_VERSION}_Linux-64bit.tar.gz -o /tmp/hugo.tar.gz
       - echo "${HUGO_SHA256}  /tmp/hugo.tar.gz" | sha256sum -c -
       - tar xf /tmp/hugo.tar.gz -C /tmp
       - mv /tmp/hugo /usr/bin/hugo
