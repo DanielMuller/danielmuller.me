@@ -3,8 +3,8 @@ version: 0.2
 environment_variables:
   plaintext:
     AWS_DEFAULT_REGION: "us-west-2"
-    HUGO_VERSION: "0.79.0"
-    HUGO_SHA256: "d5b780f83bdbd444ce40d36127d9a7000dcb86146f453989b68c3c81e4d40682"
+    HUGO_VERSION: "0.142.0"
+    HUGO_SHA256: "7e0d180a7004519cc794ab76f1c70fa6c9572838528d9787fb13ab4934f4af28"
     NODE_ENV: "development"
     HUGO_ENV: "production"
 
@@ -19,7 +19,7 @@ phases:
   pre_build:
     commands:
       - git submodule update --init --recursive
-      - npm i
+      - npm ci --verbose
       - rm -rf /tmp/hugo_cache/
       - rm -rf ./public
   build:
@@ -32,5 +32,5 @@ phases:
       - bash bin/alias/push
 cache:
   paths:
-    - 'node_modules/**/*'
-    - 'resources/**/*'
+    - "node_modules/**/*"
+    - "resources/**/*"
