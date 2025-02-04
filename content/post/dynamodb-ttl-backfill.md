@@ -3,7 +3,7 @@ author = "Daniel"
 title = "Set DynamoDB TTL values on existing data"
 date = 2024-10-21T18:15:00+00:00
 lastmod = 2024-10-21T18:15:00+00:00
-draft = true
+draft = false
 image = "images/2024/10/dynamodb-ttl-cover.png"
 categories = [
   "Serverless"
